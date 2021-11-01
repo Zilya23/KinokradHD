@@ -29,16 +29,27 @@ namespace KinokradHD
         public static ObservableCollection<Film_Director> svazy2 { get; set; }
         public static ObservableCollection<Screenwriter> screenwriters { get; set; }
         public static ObservableCollection<Film_Screenwriter> svazy3 { get; set; }
+        public static ObservableCollection<Actor> actors { get; set; }
+        public static ObservableCollection<Film_Actor> svazy4 { get; set; }
+
         public static IEnumerable<Film2> result { get; set; }
         public static IEnumerable<Operator2> result2 { get; set; }
         public static IEnumerable<Film2> resultDir { get; set; } 
         public static IEnumerable<Director2> resultDir2 { get; set; }
         public static IEnumerable<Film2> resultScr { get; set; }
         public static IEnumerable<ScreenWriter2> resultScr2 { get; set; }
+        public static IEnumerable<Film2> resultActor { get; set; }
+        public static IEnumerable<Actor2> resultActor2 { get; set; }
         public Film_Serial_Window(Film n)
         {
             InitializeComponent();
             tb_Name.Text = n.Title;
+            tb_Year.Text = Convert.ToString(n.Year);
+            tb_Country.Text = n.Country;
+            tb_Budget.Text = Convert.ToString(n.Budget);
+            tb_Duration.Text = Convert.ToString(n.Fees);
+            tb_Fees.Text = Convert.ToString(n.Duration) + "м.";
+
             img_Poster.Source = new BitmapImage(new Uri(n.Poster, UriKind.RelativeOrAbsolute));
 
             films = new ObservableCollection<Film>(bd_connection.connection.Film.ToList());
@@ -51,6 +62,9 @@ namespace KinokradHD
 
             screenwriters = new ObservableCollection<Screenwriter>(bd_connection.connection.Screenwriter.ToList());
             svazy3 = new ObservableCollection<Film_Screenwriter>(bd_connection.connection.Film_Screenwriter.ToList());
+
+            actors = new ObservableCollection<Actor>(bd_connection.connection.Actor.ToList());
+            svazy4 = new ObservableCollection<Film_Actor>(bd_connection.connection.Film_Actor.ToList());
 
             result = from f in films
                      join t in svazy on f.ID_Film equals t.ID_Film
@@ -83,6 +97,16 @@ namespace KinokradHD
                          select new ScreenWriter2 { idScreenWriter2 = s.ID_Screenwriter, nameScr = s.Name, surScr = s.Surname };
             foreach (var i in resultScr2)
                 tb_Screenwriter.Text += (i.nameScr + " " + i.surScr + "\n");
+
+            resultActor = from f in films
+                          join t in svazy4 on f.ID_Film equals t.ID_Film
+                          where n.ID_Film == f.ID_Film
+                          select new Film2 { idActot = t.ID_Actor, idFilm = f.ID_Film };
+            resultActor2 = from a in actors
+                           join t in resultActor on a.ID_Actor equals t.idActot
+                           select new Actor2 { idActor2 = a.ID_Actor, nameActr = a.Name, surActor = a.Surname };
+            foreach (var i in resultActor2)
+                tb_Actor.Text += (i.nameActr + " " + i.surActor + "\n");
         }
 
         private void btn_back_Click(object sender, RoutedEventArgs e)
@@ -98,6 +122,7 @@ namespace KinokradHD
         public int idOperator { get; set; }
         public int idDir { get; set; }
         public int idScreen { get; set; }
+        public int idActot { get; set; }
     }
 
     public class Operator2
@@ -120,6 +145,13 @@ namespace KinokradHD
        public string nameScr { get; set; }
        public string surScr { get; set; }
        public int idScreenWriter2 { get; set; }
+    }
+
+    public class Actor2
+    {
+        public string nameActr { get; set; }
+        public string surActor { get; set; }
+        public int idActor2 { get; set; }
     }
 }
 
