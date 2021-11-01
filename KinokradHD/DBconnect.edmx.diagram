@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bde3d54503024ec9a45ad4b2f8153cd9" Name="Diagram1">
+        <EntityTypeShape EntityType="KinokradHDModel.Actor" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Awards" Width="1.5" PointX="3.75" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Director" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Feedback" Width="1.5" PointX="5.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Film" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Film_Actor" Width="1.5" PointX="5.25" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Film_Director" Width="1.5" PointX="8.25" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Film_Genre" Width="1.5" PointX="8.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Film_Nomination" Width="1.5" PointX="8.25" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Film_Operator" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Film_Screenwriter" Width="1.5" PointX="5.25" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Genre" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Nomination" Width="1.5" PointX="6" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Operator" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Rating" Width="1.5" PointX="0.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Screenwriter" Width="1.5" PointX="3" PointY="32.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Serias" Width="1.5" PointX="3" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Serias_Actor" Width="1.5" PointX="8.25" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Serias_Director" Width="1.5" PointX="5.25" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Serias_Genre" Width="1.5" PointX="8.25" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Serias_Nominat" Width="1.5" PointX="11.25" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Serias_Operator" Width="1.5" PointX="11.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.Serias_Screenwriter" Width="1.5" PointX="11.25" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KinokradHDModel.User" Width="1.5" PointX="3" PointY="26.5" IsExpanded="true" />
+        <AssociationConnector Association="KinokradHDModel.FK_Film_Actor_Actor" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Serias_Actor_Actor" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Nomination_Awards" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Film_Director_Director" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Serias_Director_Director" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Feedback_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Feedback_Serias" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Feedback_User" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Film_Actor_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Film_Director_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Film_Genre_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Film_Nomination_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Film_Operator_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Film_Rating" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Film_Screenwriter_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Film_Genre_Genre" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Film_Nomination_Nomination" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Film_Operator_Operator" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Film_Screenwriter_Screenwriter" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Serias_Genre_Genre" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Serias_Nominat_Nomination" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Serias_Operator_Operator" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Serias_Rating" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Serias_Screenwriter_Screenwriter" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Serias_Actor_Serias" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Serias_Director_Serias" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Serias_Genre_Serias" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Serias_Nominat_Serias" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Serias_Nominat_Serias1" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Serias_Operator_Serias" ManuallyRouted="false" />
+        <AssociationConnector Association="KinokradHDModel.FK_Serias_Screenwriter_Serias" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

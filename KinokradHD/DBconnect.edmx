@@ -1,0 +1,1853 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище KinokradHDModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Actor">
+          <Key>
+            <PropertyRef Name="ID_Actor" />
+          </Key>
+          <Property Name="ID_Actor" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="Surname" Type="varchar(max)" />
+          <Property Name="Birthday" Type="date" />
+          <Property Name="Actor_Raiting" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Awards">
+          <Key>
+            <PropertyRef Name="ID_Awarts" />
+          </Key>
+          <Property Name="ID_Awarts" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="Country" Type="varchar(max)" />
+          <Property Name="Sait" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Director">
+          <Key>
+            <PropertyRef Name="ID_Director" />
+          </Key>
+          <Property Name="ID_Director" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="Surname" Type="varchar(max)" />
+          <Property Name="Birthday" Type="date" />
+          <Property Name="Director_Rating" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Feedback">
+          <Key>
+            <PropertyRef Name="ID_Feedback" />
+          </Key>
+          <Property Name="ID_Feedback" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Score" Type="int" />
+          <Property Name="ID_User" Type="int" />
+          <Property Name="ID_Film" Type="int" />
+          <Property Name="Feedback" Type="varchar(max)" />
+          <Property Name="ID_Serias" Type="int" />
+        </EntityType>
+        <EntityType Name="Film">
+          <Key>
+            <PropertyRef Name="ID_Film" />
+          </Key>
+          <Property Name="ID_Film" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar(max)" />
+          <Property Name="Poster" Type="varchar(max)" />
+          <Property Name="Year" Type="date" />
+          <Property Name="Budget" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Fees" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Country" Type="varchar(max)" />
+          <Property Name="Duration" Type="int" />
+          <Property Name="ID_Rating" Type="int" />
+        </EntityType>
+        <EntityType Name="Film_Actor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Film" Type="int" Nullable="false" />
+          <Property Name="ID_Actor" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Film_Director">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Film" Type="int" Nullable="false" />
+          <Property Name="ID_Director" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Film_Genre">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Film" Type="int" Nullable="false" />
+          <Property Name="ID_Genre" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Film_Nomination">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Film" Type="int" Nullable="false" />
+          <Property Name="ID_Nomination" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Film_Operator">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Film" Type="int" Nullable="false" />
+          <Property Name="ID_Operator" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Film_Screenwriter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Film" Type="int" Nullable="false" />
+          <Property Name="ID_Screenwriter" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Genre">
+          <Key>
+            <PropertyRef Name="ID_Genre" />
+          </Key>
+          <Property Name="ID_Genre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Nomination">
+          <Key>
+            <PropertyRef Name="ID_Nomination" />
+          </Key>
+          <Property Name="ID_Nomination" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="ID_Awarts" Type="int" />
+        </EntityType>
+        <EntityType Name="Operator">
+          <Key>
+            <PropertyRef Name="ID_Operator" />
+          </Key>
+          <Property Name="ID_Operator" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="Surname" Type="varchar(max)" />
+          <Property Name="Birthday" Type="date" />
+          <Property Name="Operator_Raiting" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Rating">
+          <Key>
+            <PropertyRef Name="ID_Rating" />
+          </Key>
+          <Property Name="ID_Rating" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Screenwriter">
+          <Key>
+            <PropertyRef Name="ID_Screenwriter" />
+          </Key>
+          <Property Name="ID_Screenwriter" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="Surname" Type="varchar(max)" />
+          <Property Name="Birthday" Type="date" />
+          <Property Name="Screenwriter_Raing" Type="int" />
+        </EntityType>
+        <EntityType Name="Serias">
+          <Key>
+            <PropertyRef Name="ID_Serias" />
+          </Key>
+          <Property Name="ID_Serias" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="varchar(max)" />
+          <Property Name="Poster" Type="varchar(max)" />
+          <Property Name="Year" Type="date" />
+          <Property Name="Budget" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Fees" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Country" Type="varchar(max)" />
+          <Property Name="Count_episodes" Type="int" />
+          <Property Name="Duration" Type="int" />
+          <Property Name="ID_Rating" Type="int" />
+        </EntityType>
+        <EntityType Name="Serias_Actor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Serias" Type="int" Nullable="false" />
+          <Property Name="ID_Actor" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Serias_Director">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Serias" Type="int" />
+          <Property Name="ID_Director" Type="int" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Serias_Genre">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Serias" Type="int" Nullable="false" />
+          <Property Name="ID_Genre" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Serias_Nominat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Serias" Type="int" Nullable="false" />
+          <Property Name="ID_Nomination" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Serias_Operator">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Serias" Type="int" Nullable="false" />
+          <Property Name="ID_Operator" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Serias_Screenwriter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Serias" Type="int" Nullable="false" />
+          <Property Name="ID_Screenwriter" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID_User" />
+          </Key>
+          <Property Name="ID_User" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" />
+          <Property Name="Password" Type="varchar(max)" />
+          <Property Name="Login" Type="varchar(max)" />
+        </EntityType>
+        <Association Name="FK_Feedback_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="0..1" />
+          <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID_Film" />
+            </Principal>
+            <Dependent Role="Feedback">
+              <PropertyRef Name="ID_Film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Feedback_Serias">
+          <End Role="Serias" Type="Self.Serias" Multiplicity="0..1" />
+          <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serias">
+              <PropertyRef Name="ID_Serias" />
+            </Principal>
+            <Dependent Role="Feedback">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Feedback_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="Feedback">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Actor_Actor">
+          <End Role="Actor" Type="Self.Actor" Multiplicity="1" />
+          <End Role="Film_Actor" Type="Self.Film_Actor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actor">
+              <PropertyRef Name="ID_Actor" />
+            </Principal>
+            <Dependent Role="Film_Actor">
+              <PropertyRef Name="ID_Actor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Actor_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="1" />
+          <End Role="Film_Actor" Type="Self.Film_Actor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID_Film" />
+            </Principal>
+            <Dependent Role="Film_Actor">
+              <PropertyRef Name="ID_Film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Director_Director">
+          <End Role="Director" Type="Self.Director" Multiplicity="1" />
+          <End Role="Film_Director" Type="Self.Film_Director" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Director">
+              <PropertyRef Name="ID_Director" />
+            </Principal>
+            <Dependent Role="Film_Director">
+              <PropertyRef Name="ID_Director" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Director_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="1" />
+          <End Role="Film_Director" Type="Self.Film_Director" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID_Film" />
+            </Principal>
+            <Dependent Role="Film_Director">
+              <PropertyRef Name="ID_Film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Genre_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="1" />
+          <End Role="Film_Genre" Type="Self.Film_Genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID_Film" />
+            </Principal>
+            <Dependent Role="Film_Genre">
+              <PropertyRef Name="ID_Film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Genre_Genre">
+          <End Role="Genre" Type="Self.Genre" Multiplicity="1" />
+          <End Role="Film_Genre" Type="Self.Film_Genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genre">
+              <PropertyRef Name="ID_Genre" />
+            </Principal>
+            <Dependent Role="Film_Genre">
+              <PropertyRef Name="ID_Genre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Nomination_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="1" />
+          <End Role="Film_Nomination" Type="Self.Film_Nomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID_Film" />
+            </Principal>
+            <Dependent Role="Film_Nomination">
+              <PropertyRef Name="ID_Film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Nomination_Nomination">
+          <End Role="Nomination" Type="Self.Nomination" Multiplicity="1" />
+          <End Role="Film_Nomination" Type="Self.Film_Nomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nomination">
+              <PropertyRef Name="ID_Nomination" />
+            </Principal>
+            <Dependent Role="Film_Nomination">
+              <PropertyRef Name="ID_Nomination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Operator_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="1" />
+          <End Role="Film_Operator" Type="Self.Film_Operator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID_Film" />
+            </Principal>
+            <Dependent Role="Film_Operator">
+              <PropertyRef Name="ID_Film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Operator_Operator">
+          <End Role="Operator" Type="Self.Operator" Multiplicity="1" />
+          <End Role="Film_Operator" Type="Self.Film_Operator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operator">
+              <PropertyRef Name="ID_Operator" />
+            </Principal>
+            <Dependent Role="Film_Operator">
+              <PropertyRef Name="ID_Operator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Rating">
+          <End Role="Rating" Type="Self.Rating" Multiplicity="0..1" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rating">
+              <PropertyRef Name="ID_Rating" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="ID_Rating" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Screenwriter_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="1" />
+          <End Role="Film_Screenwriter" Type="Self.Film_Screenwriter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID_Film" />
+            </Principal>
+            <Dependent Role="Film_Screenwriter">
+              <PropertyRef Name="ID_Film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Screenwriter_Screenwriter">
+          <End Role="Screenwriter" Type="Self.Screenwriter" Multiplicity="1" />
+          <End Role="Film_Screenwriter" Type="Self.Film_Screenwriter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Screenwriter">
+              <PropertyRef Name="ID_Screenwriter" />
+            </Principal>
+            <Dependent Role="Film_Screenwriter">
+              <PropertyRef Name="ID_Screenwriter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Nomination_Awards">
+          <End Role="Awards" Type="Self.Awards" Multiplicity="0..1" />
+          <End Role="Nomination" Type="Self.Nomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Awards">
+              <PropertyRef Name="ID_Awarts" />
+            </Principal>
+            <Dependent Role="Nomination">
+              <PropertyRef Name="ID_Awarts" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Actor_Actor">
+          <End Role="Actor" Type="Self.Actor" Multiplicity="1" />
+          <End Role="Serias_Actor" Type="Self.Serias_Actor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actor">
+              <PropertyRef Name="ID_Actor" />
+            </Principal>
+            <Dependent Role="Serias_Actor">
+              <PropertyRef Name="ID_Actor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Actor_Serias">
+          <End Role="Serias" Type="Self.Serias" Multiplicity="1" />
+          <End Role="Serias_Actor" Type="Self.Serias_Actor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serias">
+              <PropertyRef Name="ID_Serias" />
+            </Principal>
+            <Dependent Role="Serias_Actor">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Director_Director">
+          <End Role="Director" Type="Self.Director" Multiplicity="0..1" />
+          <End Role="Serias_Director" Type="Self.Serias_Director" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Director">
+              <PropertyRef Name="ID_Director" />
+            </Principal>
+            <Dependent Role="Serias_Director">
+              <PropertyRef Name="ID_Director" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Director_Serias">
+          <End Role="Serias" Type="Self.Serias" Multiplicity="0..1" />
+          <End Role="Serias_Director" Type="Self.Serias_Director" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serias">
+              <PropertyRef Name="ID_Serias" />
+            </Principal>
+            <Dependent Role="Serias_Director">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Genre_Genre">
+          <End Role="Genre" Type="Self.Genre" Multiplicity="1" />
+          <End Role="Serias_Genre" Type="Self.Serias_Genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genre">
+              <PropertyRef Name="ID_Genre" />
+            </Principal>
+            <Dependent Role="Serias_Genre">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Genre_Serias">
+          <End Role="Serias" Type="Self.Serias" Multiplicity="1" />
+          <End Role="Serias_Genre" Type="Self.Serias_Genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serias">
+              <PropertyRef Name="ID_Serias" />
+            </Principal>
+            <Dependent Role="Serias_Genre">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Nominat_Nomination">
+          <End Role="Nomination" Type="Self.Nomination" Multiplicity="1" />
+          <End Role="Serias_Nominat" Type="Self.Serias_Nominat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nomination">
+              <PropertyRef Name="ID_Nomination" />
+            </Principal>
+            <Dependent Role="Serias_Nominat">
+              <PropertyRef Name="ID_Nomination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Nominat_Serias">
+          <End Role="Serias" Type="Self.Serias" Multiplicity="1" />
+          <End Role="Serias_Nominat" Type="Self.Serias_Nominat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serias">
+              <PropertyRef Name="ID_Serias" />
+            </Principal>
+            <Dependent Role="Serias_Nominat">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Nominat_Serias1">
+          <End Role="Serias" Type="Self.Serias" Multiplicity="1" />
+          <End Role="Serias_Nominat" Type="Self.Serias_Nominat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serias">
+              <PropertyRef Name="ID_Serias" />
+            </Principal>
+            <Dependent Role="Serias_Nominat">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Operator_Operator">
+          <End Role="Operator" Type="Self.Operator" Multiplicity="1" />
+          <End Role="Serias_Operator" Type="Self.Serias_Operator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operator">
+              <PropertyRef Name="ID_Operator" />
+            </Principal>
+            <Dependent Role="Serias_Operator">
+              <PropertyRef Name="ID_Operator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Operator_Serias">
+          <End Role="Serias" Type="Self.Serias" Multiplicity="1" />
+          <End Role="Serias_Operator" Type="Self.Serias_Operator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serias">
+              <PropertyRef Name="ID_Serias" />
+            </Principal>
+            <Dependent Role="Serias_Operator">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Rating">
+          <End Role="Rating" Type="Self.Rating" Multiplicity="0..1" />
+          <End Role="Serias" Type="Self.Serias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rating">
+              <PropertyRef Name="ID_Rating" />
+            </Principal>
+            <Dependent Role="Serias">
+              <PropertyRef Name="ID_Rating" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Screenwriter_Screenwriter">
+          <End Role="Screenwriter" Type="Self.Screenwriter" Multiplicity="1" />
+          <End Role="Serias_Screenwriter" Type="Self.Serias_Screenwriter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Screenwriter">
+              <PropertyRef Name="ID_Screenwriter" />
+            </Principal>
+            <Dependent Role="Serias_Screenwriter">
+              <PropertyRef Name="ID_Screenwriter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Screenwriter_Serias">
+          <End Role="Serias" Type="Self.Serias" Multiplicity="1" />
+          <End Role="Serias_Screenwriter" Type="Self.Serias_Screenwriter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serias">
+              <PropertyRef Name="ID_Serias" />
+            </Principal>
+            <Dependent Role="Serias_Screenwriter">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище KinokradHDModelContainer">
+          <EntitySet Name="Actor" EntityType="Self.Actor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Awards" EntityType="Self.Awards" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Director" EntityType="Self.Director" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Film" EntityType="Self.Film" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Film_Actor" EntityType="Self.Film_Actor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Film_Director" EntityType="Self.Film_Director" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Film_Genre" EntityType="Self.Film_Genre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Film_Nomination" EntityType="Self.Film_Nomination" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Film_Operator" EntityType="Self.Film_Operator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Film_Screenwriter" EntityType="Self.Film_Screenwriter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Genre" EntityType="Self.Genre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nomination" EntityType="Self.Nomination" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Operator" EntityType="Self.Operator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rating" EntityType="Self.Rating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Screenwriter" EntityType="Self.Screenwriter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Serias" EntityType="Self.Serias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Serias_Actor" EntityType="Self.Serias_Actor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Serias_Director" EntityType="Self.Serias_Director" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Serias_Genre" EntityType="Self.Serias_Genre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Serias_Nominat" EntityType="Self.Serias_Nominat" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Serias_Operator" EntityType="Self.Serias_Operator" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Serias_Screenwriter" EntityType="Self.Serias_Screenwriter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Feedback_Film" Association="Self.FK_Feedback_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Feedback" EntitySet="Feedback" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Feedback_Serias" Association="Self.FK_Feedback_Serias">
+            <End Role="Serias" EntitySet="Serias" />
+            <End Role="Feedback" EntitySet="Feedback" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Feedback_User" Association="Self.FK_Feedback_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Feedback" EntitySet="Feedback" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Actor_Actor" Association="Self.FK_Film_Actor_Actor">
+            <End Role="Actor" EntitySet="Actor" />
+            <End Role="Film_Actor" EntitySet="Film_Actor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Actor_Film" Association="Self.FK_Film_Actor_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Film_Actor" EntitySet="Film_Actor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Director_Director" Association="Self.FK_Film_Director_Director">
+            <End Role="Director" EntitySet="Director" />
+            <End Role="Film_Director" EntitySet="Film_Director" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Director_Film" Association="Self.FK_Film_Director_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Film_Director" EntitySet="Film_Director" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Genre_Film" Association="Self.FK_Film_Genre_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Film_Genre" EntitySet="Film_Genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Genre_Genre" Association="Self.FK_Film_Genre_Genre">
+            <End Role="Genre" EntitySet="Genre" />
+            <End Role="Film_Genre" EntitySet="Film_Genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Nomination_Film" Association="Self.FK_Film_Nomination_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Film_Nomination" EntitySet="Film_Nomination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Nomination_Nomination" Association="Self.FK_Film_Nomination_Nomination">
+            <End Role="Nomination" EntitySet="Nomination" />
+            <End Role="Film_Nomination" EntitySet="Film_Nomination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Operator_Film" Association="Self.FK_Film_Operator_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Film_Operator" EntitySet="Film_Operator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Operator_Operator" Association="Self.FK_Film_Operator_Operator">
+            <End Role="Operator" EntitySet="Operator" />
+            <End Role="Film_Operator" EntitySet="Film_Operator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Rating" Association="Self.FK_Film_Rating">
+            <End Role="Rating" EntitySet="Rating" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Screenwriter_Film" Association="Self.FK_Film_Screenwriter_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Film_Screenwriter" EntitySet="Film_Screenwriter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Screenwriter_Screenwriter" Association="Self.FK_Film_Screenwriter_Screenwriter">
+            <End Role="Screenwriter" EntitySet="Screenwriter" />
+            <End Role="Film_Screenwriter" EntitySet="Film_Screenwriter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Nomination_Awards" Association="Self.FK_Nomination_Awards">
+            <End Role="Awards" EntitySet="Awards" />
+            <End Role="Nomination" EntitySet="Nomination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Actor_Actor" Association="Self.FK_Serias_Actor_Actor">
+            <End Role="Actor" EntitySet="Actor" />
+            <End Role="Serias_Actor" EntitySet="Serias_Actor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Actor_Serias" Association="Self.FK_Serias_Actor_Serias">
+            <End Role="Serias" EntitySet="Serias" />
+            <End Role="Serias_Actor" EntitySet="Serias_Actor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Director_Director" Association="Self.FK_Serias_Director_Director">
+            <End Role="Director" EntitySet="Director" />
+            <End Role="Serias_Director" EntitySet="Serias_Director" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Director_Serias" Association="Self.FK_Serias_Director_Serias">
+            <End Role="Serias" EntitySet="Serias" />
+            <End Role="Serias_Director" EntitySet="Serias_Director" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Genre_Genre" Association="Self.FK_Serias_Genre_Genre">
+            <End Role="Genre" EntitySet="Genre" />
+            <End Role="Serias_Genre" EntitySet="Serias_Genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Genre_Serias" Association="Self.FK_Serias_Genre_Serias">
+            <End Role="Serias" EntitySet="Serias" />
+            <End Role="Serias_Genre" EntitySet="Serias_Genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Nominat_Nomination" Association="Self.FK_Serias_Nominat_Nomination">
+            <End Role="Nomination" EntitySet="Nomination" />
+            <End Role="Serias_Nominat" EntitySet="Serias_Nominat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Nominat_Serias" Association="Self.FK_Serias_Nominat_Serias">
+            <End Role="Serias" EntitySet="Serias" />
+            <End Role="Serias_Nominat" EntitySet="Serias_Nominat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Nominat_Serias1" Association="Self.FK_Serias_Nominat_Serias1">
+            <End Role="Serias" EntitySet="Serias" />
+            <End Role="Serias_Nominat" EntitySet="Serias_Nominat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Operator_Operator" Association="Self.FK_Serias_Operator_Operator">
+            <End Role="Operator" EntitySet="Operator" />
+            <End Role="Serias_Operator" EntitySet="Serias_Operator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Operator_Serias" Association="Self.FK_Serias_Operator_Serias">
+            <End Role="Serias" EntitySet="Serias" />
+            <End Role="Serias_Operator" EntitySet="Serias_Operator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Rating" Association="Self.FK_Serias_Rating">
+            <End Role="Rating" EntitySet="Rating" />
+            <End Role="Serias" EntitySet="Serias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Screenwriter_Screenwriter" Association="Self.FK_Serias_Screenwriter_Screenwriter">
+            <End Role="Screenwriter" EntitySet="Screenwriter" />
+            <End Role="Serias_Screenwriter" EntitySet="Serias_Screenwriter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Screenwriter_Serias" Association="Self.FK_Serias_Screenwriter_Serias">
+            <End Role="Serias" EntitySet="Serias" />
+            <End Role="Serias_Screenwriter" EntitySet="Serias_Screenwriter" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KinokradHDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Actor">
+          <Key>
+            <PropertyRef Name="ID_Actor" />
+          </Key>
+          <Property Name="ID_Actor" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="Actor_Raiting" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Film_Actor" Relationship="Self.FK_Film_Actor_Actor" FromRole="Actor" ToRole="Film_Actor" />
+          <NavigationProperty Name="Serias_Actor" Relationship="Self.FK_Serias_Actor_Actor" FromRole="Actor" ToRole="Serias_Actor" />
+        </EntityType>
+        <EntityType Name="Awards">
+          <Key>
+            <PropertyRef Name="ID_Awarts" />
+          </Key>
+          <Property Name="ID_Awarts" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Sait" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Nomination" Relationship="Self.FK_Nomination_Awards" FromRole="Awards" ToRole="Nomination" />
+        </EntityType>
+        <EntityType Name="Director">
+          <Key>
+            <PropertyRef Name="ID_Director" />
+          </Key>
+          <Property Name="ID_Director" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="Director_Rating" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Film_Director" Relationship="Self.FK_Film_Director_Director" FromRole="Director" ToRole="Film_Director" />
+          <NavigationProperty Name="Serias_Director" Relationship="Self.FK_Serias_Director_Director" FromRole="Director" ToRole="Serias_Director" />
+        </EntityType>
+        <EntityType Name="Feedback">
+          <Key>
+            <PropertyRef Name="ID_Feedback" />
+          </Key>
+          <Property Name="ID_Feedback" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Score" Type="Int32" />
+          <Property Name="ID_User" Type="Int32" />
+          <Property Name="ID_Film" Type="Int32" />
+          <Property Name="Feedback1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ID_Serias" Type="Int32" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Feedback_Film" FromRole="Feedback" ToRole="Film" />
+          <NavigationProperty Name="Serias" Relationship="Self.FK_Feedback_Serias" FromRole="Feedback" ToRole="Serias" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Feedback_User" FromRole="Feedback" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Film">
+          <Key>
+            <PropertyRef Name="ID_Film" />
+          </Key>
+          <Property Name="ID_Film" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Poster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Year" Type="DateTime" Precision="0" />
+          <Property Name="Budget" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Fees" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Duration" Type="Int32" />
+          <Property Name="ID_Rating" Type="Int32" />
+          <NavigationProperty Name="Feedback" Relationship="Self.FK_Feedback_Film" FromRole="Film" ToRole="Feedback" />
+          <NavigationProperty Name="Film_Actor" Relationship="Self.FK_Film_Actor_Film" FromRole="Film" ToRole="Film_Actor" />
+          <NavigationProperty Name="Film_Director" Relationship="Self.FK_Film_Director_Film" FromRole="Film" ToRole="Film_Director" />
+          <NavigationProperty Name="Film_Genre" Relationship="Self.FK_Film_Genre_Film" FromRole="Film" ToRole="Film_Genre" />
+          <NavigationProperty Name="Film_Nomination" Relationship="Self.FK_Film_Nomination_Film" FromRole="Film" ToRole="Film_Nomination" />
+          <NavigationProperty Name="Film_Operator" Relationship="Self.FK_Film_Operator_Film" FromRole="Film" ToRole="Film_Operator" />
+          <NavigationProperty Name="Rating" Relationship="Self.FK_Film_Rating" FromRole="Film" ToRole="Rating" />
+          <NavigationProperty Name="Film_Screenwriter" Relationship="Self.FK_Film_Screenwriter_Film" FromRole="Film" ToRole="Film_Screenwriter" />
+        </EntityType>
+        <EntityType Name="Film_Actor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Film" Type="Int32" Nullable="false" />
+          <Property Name="ID_Actor" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Actor" Relationship="Self.FK_Film_Actor_Actor" FromRole="Film_Actor" ToRole="Actor" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Film_Actor_Film" FromRole="Film_Actor" ToRole="Film" />
+        </EntityType>
+        <EntityType Name="Film_Director">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Film" Type="Int32" Nullable="false" />
+          <Property Name="ID_Director" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Director" Relationship="Self.FK_Film_Director_Director" FromRole="Film_Director" ToRole="Director" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Film_Director_Film" FromRole="Film_Director" ToRole="Film" />
+        </EntityType>
+        <EntityType Name="Film_Genre">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Film" Type="Int32" Nullable="false" />
+          <Property Name="ID_Genre" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Film_Genre_Film" FromRole="Film_Genre" ToRole="Film" />
+          <NavigationProperty Name="Genre" Relationship="Self.FK_Film_Genre_Genre" FromRole="Film_Genre" ToRole="Genre" />
+        </EntityType>
+        <EntityType Name="Film_Nomination">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Film" Type="Int32" Nullable="false" />
+          <Property Name="ID_Nomination" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Film_Nomination_Film" FromRole="Film_Nomination" ToRole="Film" />
+          <NavigationProperty Name="Nomination" Relationship="Self.FK_Film_Nomination_Nomination" FromRole="Film_Nomination" ToRole="Nomination" />
+        </EntityType>
+        <EntityType Name="Film_Operator">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Film" Type="Int32" Nullable="false" />
+          <Property Name="ID_Operator" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Film_Operator_Film" FromRole="Film_Operator" ToRole="Film" />
+          <NavigationProperty Name="Operator" Relationship="Self.FK_Film_Operator_Operator" FromRole="Film_Operator" ToRole="Operator" />
+        </EntityType>
+        <EntityType Name="Film_Screenwriter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Film" Type="Int32" Nullable="false" />
+          <Property Name="ID_Screenwriter" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Film_Screenwriter_Film" FromRole="Film_Screenwriter" ToRole="Film" />
+          <NavigationProperty Name="Screenwriter" Relationship="Self.FK_Film_Screenwriter_Screenwriter" FromRole="Film_Screenwriter" ToRole="Screenwriter" />
+        </EntityType>
+        <EntityType Name="Genre">
+          <Key>
+            <PropertyRef Name="ID_Genre" />
+          </Key>
+          <Property Name="ID_Genre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Film_Genre" Relationship="Self.FK_Film_Genre_Genre" FromRole="Genre" ToRole="Film_Genre" />
+          <NavigationProperty Name="Serias_Genre" Relationship="Self.FK_Serias_Genre_Genre" FromRole="Genre" ToRole="Serias_Genre" />
+        </EntityType>
+        <EntityType Name="Nomination">
+          <Key>
+            <PropertyRef Name="ID_Nomination" />
+          </Key>
+          <Property Name="ID_Nomination" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ID_Awarts" Type="Int32" />
+          <NavigationProperty Name="Awards" Relationship="Self.FK_Nomination_Awards" FromRole="Nomination" ToRole="Awards" />
+          <NavigationProperty Name="Film_Nomination" Relationship="Self.FK_Film_Nomination_Nomination" FromRole="Nomination" ToRole="Film_Nomination" />
+          <NavigationProperty Name="Serias_Nominat" Relationship="Self.FK_Serias_Nominat_Nomination" FromRole="Nomination" ToRole="Serias_Nominat" />
+        </EntityType>
+        <EntityType Name="Operator">
+          <Key>
+            <PropertyRef Name="ID_Operator" />
+          </Key>
+          <Property Name="ID_Operator" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="Operator_Raiting" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Film_Operator" Relationship="Self.FK_Film_Operator_Operator" FromRole="Operator" ToRole="Film_Operator" />
+          <NavigationProperty Name="Serias_Operator" Relationship="Self.FK_Serias_Operator_Operator" FromRole="Operator" ToRole="Serias_Operator" />
+        </EntityType>
+        <EntityType Name="Rating">
+          <Key>
+            <PropertyRef Name="ID_Rating" />
+          </Key>
+          <Property Name="ID_Rating" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_Film_Rating" FromRole="Rating" ToRole="Film" />
+          <NavigationProperty Name="Serias" Relationship="Self.FK_Serias_Rating" FromRole="Rating" ToRole="Serias" />
+        </EntityType>
+        <EntityType Name="Screenwriter">
+          <Key>
+            <PropertyRef Name="ID_Screenwriter" />
+          </Key>
+          <Property Name="ID_Screenwriter" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="Screenwriter_Raing" Type="Int32" />
+          <NavigationProperty Name="Film_Screenwriter" Relationship="Self.FK_Film_Screenwriter_Screenwriter" FromRole="Screenwriter" ToRole="Film_Screenwriter" />
+          <NavigationProperty Name="Serias_Screenwriter" Relationship="Self.FK_Serias_Screenwriter_Screenwriter" FromRole="Screenwriter" ToRole="Serias_Screenwriter" />
+        </EntityType>
+        <EntityType Name="Serias">
+          <Key>
+            <PropertyRef Name="ID_Serias" />
+          </Key>
+          <Property Name="ID_Serias" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Poster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Year" Type="DateTime" Precision="0" />
+          <Property Name="Budget" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Fees" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Count_episodes" Type="Int32" />
+          <Property Name="Duration" Type="Int32" />
+          <Property Name="ID_Rating" Type="Int32" />
+          <NavigationProperty Name="Feedback" Relationship="Self.FK_Feedback_Serias" FromRole="Serias" ToRole="Feedback" />
+          <NavigationProperty Name="Rating" Relationship="Self.FK_Serias_Rating" FromRole="Serias" ToRole="Rating" />
+          <NavigationProperty Name="Serias_Actor" Relationship="Self.FK_Serias_Actor_Serias" FromRole="Serias" ToRole="Serias_Actor" />
+          <NavigationProperty Name="Serias_Director" Relationship="Self.FK_Serias_Director_Serias" FromRole="Serias" ToRole="Serias_Director" />
+          <NavigationProperty Name="Serias_Genre" Relationship="Self.FK_Serias_Genre_Serias" FromRole="Serias" ToRole="Serias_Genre" />
+          <NavigationProperty Name="Serias_Nominat" Relationship="Self.FK_Serias_Nominat_Serias" FromRole="Serias" ToRole="Serias_Nominat" />
+          <NavigationProperty Name="Serias_Nominat1" Relationship="Self.FK_Serias_Nominat_Serias1" FromRole="Serias" ToRole="Serias_Nominat" />
+          <NavigationProperty Name="Serias_Operator" Relationship="Self.FK_Serias_Operator_Serias" FromRole="Serias" ToRole="Serias_Operator" />
+          <NavigationProperty Name="Serias_Screenwriter" Relationship="Self.FK_Serias_Screenwriter_Serias" FromRole="Serias" ToRole="Serias_Screenwriter" />
+        </EntityType>
+        <EntityType Name="Serias_Actor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Serias" Type="Int32" Nullable="false" />
+          <Property Name="ID_Actor" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Actor" Relationship="Self.FK_Serias_Actor_Actor" FromRole="Serias_Actor" ToRole="Actor" />
+          <NavigationProperty Name="Serias" Relationship="Self.FK_Serias_Actor_Serias" FromRole="Serias_Actor" ToRole="Serias" />
+        </EntityType>
+        <EntityType Name="Serias_Director">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Serias" Type="Int32" />
+          <Property Name="ID_Director" Type="Int32" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Director" Relationship="Self.FK_Serias_Director_Director" FromRole="Serias_Director" ToRole="Director" />
+          <NavigationProperty Name="Serias" Relationship="Self.FK_Serias_Director_Serias" FromRole="Serias_Director" ToRole="Serias" />
+        </EntityType>
+        <EntityType Name="Serias_Genre">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Serias" Type="Int32" Nullable="false" />
+          <Property Name="ID_Genre" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Genre" Relationship="Self.FK_Serias_Genre_Genre" FromRole="Serias_Genre" ToRole="Genre" />
+          <NavigationProperty Name="Serias" Relationship="Self.FK_Serias_Genre_Serias" FromRole="Serias_Genre" ToRole="Serias" />
+        </EntityType>
+        <EntityType Name="Serias_Nominat">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Serias" Type="Int32" Nullable="false" />
+          <Property Name="ID_Nomination" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Nomination" Relationship="Self.FK_Serias_Nominat_Nomination" FromRole="Serias_Nominat" ToRole="Nomination" />
+          <NavigationProperty Name="Serias" Relationship="Self.FK_Serias_Nominat_Serias" FromRole="Serias_Nominat" ToRole="Serias" />
+          <NavigationProperty Name="Serias1" Relationship="Self.FK_Serias_Nominat_Serias1" FromRole="Serias_Nominat" ToRole="Serias" />
+        </EntityType>
+        <EntityType Name="Serias_Operator">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Serias" Type="Int32" Nullable="false" />
+          <Property Name="ID_Operator" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Operator" Relationship="Self.FK_Serias_Operator_Operator" FromRole="Serias_Operator" ToRole="Operator" />
+          <NavigationProperty Name="Serias" Relationship="Self.FK_Serias_Operator_Serias" FromRole="Serias_Operator" ToRole="Serias" />
+        </EntityType>
+        <EntityType Name="Serias_Screenwriter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID_Serias" Type="Int32" Nullable="false" />
+          <Property Name="ID_Screenwriter" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Screenwriter" Relationship="Self.FK_Serias_Screenwriter_Screenwriter" FromRole="Serias_Screenwriter" ToRole="Screenwriter" />
+          <NavigationProperty Name="Serias" Relationship="Self.FK_Serias_Screenwriter_Serias" FromRole="Serias_Screenwriter" ToRole="Serias" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID_User" />
+          </Key>
+          <Property Name="ID_User" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Feedback" Relationship="Self.FK_Feedback_User" FromRole="User" ToRole="Feedback" />
+        </EntityType>
+        <Association Name="FK_Film_Actor_Actor">
+          <End Role="Actor" Type="Self.Actor" Multiplicity="1" />
+          <End Role="Film_Actor" Type="Self.Film_Actor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actor">
+              <PropertyRef Name="ID_Actor" />
+            </Principal>
+            <Dependent Role="Film_Actor">
+              <PropertyRef Name="ID_Actor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Actor_Actor">
+          <End Role="Actor" Type="Self.Actor" Multiplicity="1" />
+          <End Role="Serias_Actor" Type="Self.Serias_Actor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actor">
+              <PropertyRef Name="ID_Actor" />
+            </Principal>
+            <Dependent Role="Serias_Actor">
+              <PropertyRef Name="ID_Actor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Nomination_Awards">
+          <End Role="Awards" Type="Self.Awards" Multiplicity="0..1" />
+          <End Role="Nomination" Type="Self.Nomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Awards">
+              <PropertyRef Name="ID_Awarts" />
+            </Principal>
+            <Dependent Role="Nomination">
+              <PropertyRef Name="ID_Awarts" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Director_Director">
+          <End Role="Director" Type="Self.Director" Multiplicity="1" />
+          <End Role="Film_Director" Type="Self.Film_Director" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Director">
+              <PropertyRef Name="ID_Director" />
+            </Principal>
+            <Dependent Role="Film_Director">
+              <PropertyRef Name="ID_Director" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Director_Director">
+          <End Role="Director" Type="Self.Director" Multiplicity="0..1" />
+          <End Role="Serias_Director" Type="Self.Serias_Director" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Director">
+              <PropertyRef Name="ID_Director" />
+            </Principal>
+            <Dependent Role="Serias_Director">
+              <PropertyRef Name="ID_Director" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Feedback_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="0..1" />
+          <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID_Film" />
+            </Principal>
+            <Dependent Role="Feedback">
+              <PropertyRef Name="ID_Film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Feedback_Serias">
+          <End Role="Serias" Type="Self.Serias" Multiplicity="0..1" />
+          <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serias">
+              <PropertyRef Name="ID_Serias" />
+            </Principal>
+            <Dependent Role="Feedback">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Feedback_User">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Feedback" Type="Self.Feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="Feedback">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Actor_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="1" />
+          <End Role="Film_Actor" Type="Self.Film_Actor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID_Film" />
+            </Principal>
+            <Dependent Role="Film_Actor">
+              <PropertyRef Name="ID_Film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Director_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="1" />
+          <End Role="Film_Director" Type="Self.Film_Director" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID_Film" />
+            </Principal>
+            <Dependent Role="Film_Director">
+              <PropertyRef Name="ID_Film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Genre_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="1" />
+          <End Role="Film_Genre" Type="Self.Film_Genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID_Film" />
+            </Principal>
+            <Dependent Role="Film_Genre">
+              <PropertyRef Name="ID_Film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Nomination_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="1" />
+          <End Role="Film_Nomination" Type="Self.Film_Nomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID_Film" />
+            </Principal>
+            <Dependent Role="Film_Nomination">
+              <PropertyRef Name="ID_Film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Operator_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="1" />
+          <End Role="Film_Operator" Type="Self.Film_Operator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID_Film" />
+            </Principal>
+            <Dependent Role="Film_Operator">
+              <PropertyRef Name="ID_Film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Rating">
+          <End Role="Rating" Type="Self.Rating" Multiplicity="0..1" />
+          <End Role="Film" Type="Self.Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rating">
+              <PropertyRef Name="ID_Rating" />
+            </Principal>
+            <Dependent Role="Film">
+              <PropertyRef Name="ID_Rating" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Screenwriter_Film">
+          <End Role="Film" Type="Self.Film" Multiplicity="1" />
+          <End Role="Film_Screenwriter" Type="Self.Film_Screenwriter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Film">
+              <PropertyRef Name="ID_Film" />
+            </Principal>
+            <Dependent Role="Film_Screenwriter">
+              <PropertyRef Name="ID_Film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Genre_Genre">
+          <End Role="Genre" Type="Self.Genre" Multiplicity="1" />
+          <End Role="Film_Genre" Type="Self.Film_Genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genre">
+              <PropertyRef Name="ID_Genre" />
+            </Principal>
+            <Dependent Role="Film_Genre">
+              <PropertyRef Name="ID_Genre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Nomination_Nomination">
+          <End Role="Nomination" Type="Self.Nomination" Multiplicity="1" />
+          <End Role="Film_Nomination" Type="Self.Film_Nomination" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nomination">
+              <PropertyRef Name="ID_Nomination" />
+            </Principal>
+            <Dependent Role="Film_Nomination">
+              <PropertyRef Name="ID_Nomination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Operator_Operator">
+          <End Role="Operator" Type="Self.Operator" Multiplicity="1" />
+          <End Role="Film_Operator" Type="Self.Film_Operator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operator">
+              <PropertyRef Name="ID_Operator" />
+            </Principal>
+            <Dependent Role="Film_Operator">
+              <PropertyRef Name="ID_Operator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Film_Screenwriter_Screenwriter">
+          <End Role="Screenwriter" Type="Self.Screenwriter" Multiplicity="1" />
+          <End Role="Film_Screenwriter" Type="Self.Film_Screenwriter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Screenwriter">
+              <PropertyRef Name="ID_Screenwriter" />
+            </Principal>
+            <Dependent Role="Film_Screenwriter">
+              <PropertyRef Name="ID_Screenwriter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Genre_Genre">
+          <End Role="Genre" Type="Self.Genre" Multiplicity="1" />
+          <End Role="Serias_Genre" Type="Self.Serias_Genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genre">
+              <PropertyRef Name="ID_Genre" />
+            </Principal>
+            <Dependent Role="Serias_Genre">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Nominat_Nomination">
+          <End Role="Nomination" Type="Self.Nomination" Multiplicity="1" />
+          <End Role="Serias_Nominat" Type="Self.Serias_Nominat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nomination">
+              <PropertyRef Name="ID_Nomination" />
+            </Principal>
+            <Dependent Role="Serias_Nominat">
+              <PropertyRef Name="ID_Nomination" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Operator_Operator">
+          <End Role="Operator" Type="Self.Operator" Multiplicity="1" />
+          <End Role="Serias_Operator" Type="Self.Serias_Operator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operator">
+              <PropertyRef Name="ID_Operator" />
+            </Principal>
+            <Dependent Role="Serias_Operator">
+              <PropertyRef Name="ID_Operator" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Rating">
+          <End Role="Rating" Type="Self.Rating" Multiplicity="0..1" />
+          <End Role="Serias" Type="Self.Serias" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rating">
+              <PropertyRef Name="ID_Rating" />
+            </Principal>
+            <Dependent Role="Serias">
+              <PropertyRef Name="ID_Rating" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Screenwriter_Screenwriter">
+          <End Role="Screenwriter" Type="Self.Screenwriter" Multiplicity="1" />
+          <End Role="Serias_Screenwriter" Type="Self.Serias_Screenwriter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Screenwriter">
+              <PropertyRef Name="ID_Screenwriter" />
+            </Principal>
+            <Dependent Role="Serias_Screenwriter">
+              <PropertyRef Name="ID_Screenwriter" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Actor_Serias">
+          <End Role="Serias" Type="Self.Serias" Multiplicity="1" />
+          <End Role="Serias_Actor" Type="Self.Serias_Actor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serias">
+              <PropertyRef Name="ID_Serias" />
+            </Principal>
+            <Dependent Role="Serias_Actor">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Director_Serias">
+          <End Role="Serias" Type="Self.Serias" Multiplicity="0..1" />
+          <End Role="Serias_Director" Type="Self.Serias_Director" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serias">
+              <PropertyRef Name="ID_Serias" />
+            </Principal>
+            <Dependent Role="Serias_Director">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Genre_Serias">
+          <End Role="Serias" Type="Self.Serias" Multiplicity="1" />
+          <End Role="Serias_Genre" Type="Self.Serias_Genre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serias">
+              <PropertyRef Name="ID_Serias" />
+            </Principal>
+            <Dependent Role="Serias_Genre">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Nominat_Serias">
+          <End Role="Serias" Type="Self.Serias" Multiplicity="1" />
+          <End Role="Serias_Nominat" Type="Self.Serias_Nominat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serias">
+              <PropertyRef Name="ID_Serias" />
+            </Principal>
+            <Dependent Role="Serias_Nominat">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Nominat_Serias1">
+          <End Role="Serias" Type="Self.Serias" Multiplicity="1" />
+          <End Role="Serias_Nominat" Type="Self.Serias_Nominat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serias">
+              <PropertyRef Name="ID_Serias" />
+            </Principal>
+            <Dependent Role="Serias_Nominat">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Operator_Serias">
+          <End Role="Serias" Type="Self.Serias" Multiplicity="1" />
+          <End Role="Serias_Operator" Type="Self.Serias_Operator" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serias">
+              <PropertyRef Name="ID_Serias" />
+            </Principal>
+            <Dependent Role="Serias_Operator">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Serias_Screenwriter_Serias">
+          <End Role="Serias" Type="Self.Serias" Multiplicity="1" />
+          <End Role="Serias_Screenwriter" Type="Self.Serias_Screenwriter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serias">
+              <PropertyRef Name="ID_Serias" />
+            </Principal>
+            <Dependent Role="Serias_Screenwriter">
+              <PropertyRef Name="ID_Serias" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KinokradHDEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Actor" EntityType="Self.Actor" />
+          <EntitySet Name="Awards" EntityType="Self.Awards" />
+          <EntitySet Name="Director" EntityType="Self.Director" />
+          <EntitySet Name="Feedback" EntityType="Self.Feedback" />
+          <EntitySet Name="Film" EntityType="Self.Film" />
+          <EntitySet Name="Film_Actor" EntityType="Self.Film_Actor" />
+          <EntitySet Name="Film_Director" EntityType="Self.Film_Director" />
+          <EntitySet Name="Film_Genre" EntityType="Self.Film_Genre" />
+          <EntitySet Name="Film_Nomination" EntityType="Self.Film_Nomination" />
+          <EntitySet Name="Film_Operator" EntityType="Self.Film_Operator" />
+          <EntitySet Name="Film_Screenwriter" EntityType="Self.Film_Screenwriter" />
+          <EntitySet Name="Genre" EntityType="Self.Genre" />
+          <EntitySet Name="Nomination" EntityType="Self.Nomination" />
+          <EntitySet Name="Operator" EntityType="Self.Operator" />
+          <EntitySet Name="Rating" EntityType="Self.Rating" />
+          <EntitySet Name="Screenwriter" EntityType="Self.Screenwriter" />
+          <EntitySet Name="Serias" EntityType="Self.Serias" />
+          <EntitySet Name="Serias_Actor" EntityType="Self.Serias_Actor" />
+          <EntitySet Name="Serias_Director" EntityType="Self.Serias_Director" />
+          <EntitySet Name="Serias_Genre" EntityType="Self.Serias_Genre" />
+          <EntitySet Name="Serias_Nominat" EntityType="Self.Serias_Nominat" />
+          <EntitySet Name="Serias_Operator" EntityType="Self.Serias_Operator" />
+          <EntitySet Name="Serias_Screenwriter" EntityType="Self.Serias_Screenwriter" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <AssociationSet Name="FK_Film_Actor_Actor" Association="Self.FK_Film_Actor_Actor">
+            <End Role="Actor" EntitySet="Actor" />
+            <End Role="Film_Actor" EntitySet="Film_Actor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Actor_Actor" Association="Self.FK_Serias_Actor_Actor">
+            <End Role="Actor" EntitySet="Actor" />
+            <End Role="Serias_Actor" EntitySet="Serias_Actor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Nomination_Awards" Association="Self.FK_Nomination_Awards">
+            <End Role="Awards" EntitySet="Awards" />
+            <End Role="Nomination" EntitySet="Nomination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Director_Director" Association="Self.FK_Film_Director_Director">
+            <End Role="Director" EntitySet="Director" />
+            <End Role="Film_Director" EntitySet="Film_Director" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Director_Director" Association="Self.FK_Serias_Director_Director">
+            <End Role="Director" EntitySet="Director" />
+            <End Role="Serias_Director" EntitySet="Serias_Director" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Feedback_Film" Association="Self.FK_Feedback_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Feedback" EntitySet="Feedback" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Feedback_Serias" Association="Self.FK_Feedback_Serias">
+            <End Role="Serias" EntitySet="Serias" />
+            <End Role="Feedback" EntitySet="Feedback" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Feedback_User" Association="Self.FK_Feedback_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Feedback" EntitySet="Feedback" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Actor_Film" Association="Self.FK_Film_Actor_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Film_Actor" EntitySet="Film_Actor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Director_Film" Association="Self.FK_Film_Director_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Film_Director" EntitySet="Film_Director" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Genre_Film" Association="Self.FK_Film_Genre_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Film_Genre" EntitySet="Film_Genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Nomination_Film" Association="Self.FK_Film_Nomination_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Film_Nomination" EntitySet="Film_Nomination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Operator_Film" Association="Self.FK_Film_Operator_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Film_Operator" EntitySet="Film_Operator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Rating" Association="Self.FK_Film_Rating">
+            <End Role="Rating" EntitySet="Rating" />
+            <End Role="Film" EntitySet="Film" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Screenwriter_Film" Association="Self.FK_Film_Screenwriter_Film">
+            <End Role="Film" EntitySet="Film" />
+            <End Role="Film_Screenwriter" EntitySet="Film_Screenwriter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Genre_Genre" Association="Self.FK_Film_Genre_Genre">
+            <End Role="Genre" EntitySet="Genre" />
+            <End Role="Film_Genre" EntitySet="Film_Genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Nomination_Nomination" Association="Self.FK_Film_Nomination_Nomination">
+            <End Role="Nomination" EntitySet="Nomination" />
+            <End Role="Film_Nomination" EntitySet="Film_Nomination" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Operator_Operator" Association="Self.FK_Film_Operator_Operator">
+            <End Role="Operator" EntitySet="Operator" />
+            <End Role="Film_Operator" EntitySet="Film_Operator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Film_Screenwriter_Screenwriter" Association="Self.FK_Film_Screenwriter_Screenwriter">
+            <End Role="Screenwriter" EntitySet="Screenwriter" />
+            <End Role="Film_Screenwriter" EntitySet="Film_Screenwriter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Genre_Genre" Association="Self.FK_Serias_Genre_Genre">
+            <End Role="Genre" EntitySet="Genre" />
+            <End Role="Serias_Genre" EntitySet="Serias_Genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Nominat_Nomination" Association="Self.FK_Serias_Nominat_Nomination">
+            <End Role="Nomination" EntitySet="Nomination" />
+            <End Role="Serias_Nominat" EntitySet="Serias_Nominat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Operator_Operator" Association="Self.FK_Serias_Operator_Operator">
+            <End Role="Operator" EntitySet="Operator" />
+            <End Role="Serias_Operator" EntitySet="Serias_Operator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Rating" Association="Self.FK_Serias_Rating">
+            <End Role="Rating" EntitySet="Rating" />
+            <End Role="Serias" EntitySet="Serias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Screenwriter_Screenwriter" Association="Self.FK_Serias_Screenwriter_Screenwriter">
+            <End Role="Screenwriter" EntitySet="Screenwriter" />
+            <End Role="Serias_Screenwriter" EntitySet="Serias_Screenwriter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Actor_Serias" Association="Self.FK_Serias_Actor_Serias">
+            <End Role="Serias" EntitySet="Serias" />
+            <End Role="Serias_Actor" EntitySet="Serias_Actor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Director_Serias" Association="Self.FK_Serias_Director_Serias">
+            <End Role="Serias" EntitySet="Serias" />
+            <End Role="Serias_Director" EntitySet="Serias_Director" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Genre_Serias" Association="Self.FK_Serias_Genre_Serias">
+            <End Role="Serias" EntitySet="Serias" />
+            <End Role="Serias_Genre" EntitySet="Serias_Genre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Nominat_Serias" Association="Self.FK_Serias_Nominat_Serias">
+            <End Role="Serias" EntitySet="Serias" />
+            <End Role="Serias_Nominat" EntitySet="Serias_Nominat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Nominat_Serias1" Association="Self.FK_Serias_Nominat_Serias1">
+            <End Role="Serias" EntitySet="Serias" />
+            <End Role="Serias_Nominat" EntitySet="Serias_Nominat" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Operator_Serias" Association="Self.FK_Serias_Operator_Serias">
+            <End Role="Serias" EntitySet="Serias" />
+            <End Role="Serias_Operator" EntitySet="Serias_Operator" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Serias_Screenwriter_Serias" Association="Self.FK_Serias_Screenwriter_Serias">
+            <End Role="Serias" EntitySet="Serias" />
+            <End Role="Serias_Screenwriter" EntitySet="Serias_Screenwriter" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище KinokradHDModelContainer" CdmEntityContainer="KinokradHDEntities">
+          <EntitySetMapping Name="Actor">
+            <EntityTypeMapping TypeName="KinokradHDModel.Actor">
+              <MappingFragment StoreEntitySet="Actor">
+                <ScalarProperty Name="ID_Actor" ColumnName="ID_Actor" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Actor_Raiting" ColumnName="Actor_Raiting" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Awards">
+            <EntityTypeMapping TypeName="KinokradHDModel.Awards">
+              <MappingFragment StoreEntitySet="Awards">
+                <ScalarProperty Name="ID_Awarts" ColumnName="ID_Awarts" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Sait" ColumnName="Sait" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Director">
+            <EntityTypeMapping TypeName="KinokradHDModel.Director">
+              <MappingFragment StoreEntitySet="Director">
+                <ScalarProperty Name="ID_Director" ColumnName="ID_Director" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Director_Rating" ColumnName="Director_Rating" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Feedback">
+            <EntityTypeMapping TypeName="KinokradHDModel.Feedback">
+              <MappingFragment StoreEntitySet="Feedback">
+                <ScalarProperty Name="ID_Feedback" ColumnName="ID_Feedback" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
+                <ScalarProperty Name="Feedback1" ColumnName="Feedback" />
+                <ScalarProperty Name="ID_Serias" ColumnName="ID_Serias" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Film">
+            <EntityTypeMapping TypeName="KinokradHDModel.Film">
+              <MappingFragment StoreEntitySet="Film">
+                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Poster" ColumnName="Poster" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Budget" ColumnName="Budget" />
+                <ScalarProperty Name="Fees" ColumnName="Fees" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="ID_Rating" ColumnName="ID_Rating" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Film_Actor">
+            <EntityTypeMapping TypeName="KinokradHDModel.Film_Actor">
+              <MappingFragment StoreEntitySet="Film_Actor">
+                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
+                <ScalarProperty Name="ID_Actor" ColumnName="ID_Actor" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Film_Director">
+            <EntityTypeMapping TypeName="KinokradHDModel.Film_Director">
+              <MappingFragment StoreEntitySet="Film_Director">
+                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
+                <ScalarProperty Name="ID_Director" ColumnName="ID_Director" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Film_Genre">
+            <EntityTypeMapping TypeName="KinokradHDModel.Film_Genre">
+              <MappingFragment StoreEntitySet="Film_Genre">
+                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
+                <ScalarProperty Name="ID_Genre" ColumnName="ID_Genre" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Film_Nomination">
+            <EntityTypeMapping TypeName="KinokradHDModel.Film_Nomination">
+              <MappingFragment StoreEntitySet="Film_Nomination">
+                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
+                <ScalarProperty Name="ID_Nomination" ColumnName="ID_Nomination" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Film_Operator">
+            <EntityTypeMapping TypeName="KinokradHDModel.Film_Operator">
+              <MappingFragment StoreEntitySet="Film_Operator">
+                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
+                <ScalarProperty Name="ID_Operator" ColumnName="ID_Operator" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Film_Screenwriter">
+            <EntityTypeMapping TypeName="KinokradHDModel.Film_Screenwriter">
+              <MappingFragment StoreEntitySet="Film_Screenwriter">
+                <ScalarProperty Name="ID_Film" ColumnName="ID_Film" />
+                <ScalarProperty Name="ID_Screenwriter" ColumnName="ID_Screenwriter" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genre">
+            <EntityTypeMapping TypeName="KinokradHDModel.Genre">
+              <MappingFragment StoreEntitySet="Genre">
+                <ScalarProperty Name="ID_Genre" ColumnName="ID_Genre" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nomination">
+            <EntityTypeMapping TypeName="KinokradHDModel.Nomination">
+              <MappingFragment StoreEntitySet="Nomination">
+                <ScalarProperty Name="ID_Nomination" ColumnName="ID_Nomination" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_Awarts" ColumnName="ID_Awarts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Operator">
+            <EntityTypeMapping TypeName="KinokradHDModel.Operator">
+              <MappingFragment StoreEntitySet="Operator">
+                <ScalarProperty Name="ID_Operator" ColumnName="ID_Operator" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Operator_Raiting" ColumnName="Operator_Raiting" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rating">
+            <EntityTypeMapping TypeName="KinokradHDModel.Rating">
+              <MappingFragment StoreEntitySet="Rating">
+                <ScalarProperty Name="ID_Rating" ColumnName="ID_Rating" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Screenwriter">
+            <EntityTypeMapping TypeName="KinokradHDModel.Screenwriter">
+              <MappingFragment StoreEntitySet="Screenwriter">
+                <ScalarProperty Name="ID_Screenwriter" ColumnName="ID_Screenwriter" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Screenwriter_Raing" ColumnName="Screenwriter_Raing" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Serias">
+            <EntityTypeMapping TypeName="KinokradHDModel.Serias">
+              <MappingFragment StoreEntitySet="Serias">
+                <ScalarProperty Name="ID_Serias" ColumnName="ID_Serias" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Poster" ColumnName="Poster" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Budget" ColumnName="Budget" />
+                <ScalarProperty Name="Fees" ColumnName="Fees" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Count_episodes" ColumnName="Count_episodes" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="ID_Rating" ColumnName="ID_Rating" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Serias_Actor">
+            <EntityTypeMapping TypeName="KinokradHDModel.Serias_Actor">
+              <MappingFragment StoreEntitySet="Serias_Actor">
+                <ScalarProperty Name="ID_Serias" ColumnName="ID_Serias" />
+                <ScalarProperty Name="ID_Actor" ColumnName="ID_Actor" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Serias_Director">
+            <EntityTypeMapping TypeName="KinokradHDModel.Serias_Director">
+              <MappingFragment StoreEntitySet="Serias_Director">
+                <ScalarProperty Name="ID_Serias" ColumnName="ID_Serias" />
+                <ScalarProperty Name="ID_Director" ColumnName="ID_Director" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Serias_Genre">
+            <EntityTypeMapping TypeName="KinokradHDModel.Serias_Genre">
+              <MappingFragment StoreEntitySet="Serias_Genre">
+                <ScalarProperty Name="ID_Serias" ColumnName="ID_Serias" />
+                <ScalarProperty Name="ID_Genre" ColumnName="ID_Genre" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Serias_Nominat">
+            <EntityTypeMapping TypeName="KinokradHDModel.Serias_Nominat">
+              <MappingFragment StoreEntitySet="Serias_Nominat">
+                <ScalarProperty Name="ID_Serias" ColumnName="ID_Serias" />
+                <ScalarProperty Name="ID_Nomination" ColumnName="ID_Nomination" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Serias_Operator">
+            <EntityTypeMapping TypeName="KinokradHDModel.Serias_Operator">
+              <MappingFragment StoreEntitySet="Serias_Operator">
+                <ScalarProperty Name="ID_Serias" ColumnName="ID_Serias" />
+                <ScalarProperty Name="ID_Operator" ColumnName="ID_Operator" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Serias_Screenwriter">
+            <EntityTypeMapping TypeName="KinokradHDModel.Serias_Screenwriter">
+              <MappingFragment StoreEntitySet="Serias_Screenwriter">
+                <ScalarProperty Name="ID_Serias" ColumnName="ID_Serias" />
+                <ScalarProperty Name="ID_Screenwriter" ColumnName="ID_Screenwriter" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="KinokradHDModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="KinokradHDModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
