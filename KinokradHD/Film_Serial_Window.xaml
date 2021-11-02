@@ -36,6 +36,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Button x:Name="btn_back" Content="Назад" Width="50" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btn_back_Click" />
 
@@ -49,10 +50,11 @@
         <TextBlock Text="Сборы" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="12"/>
         <TextBlock Text="Продолжительность" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="13"/>
         <TextBlock Text="Награды" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="14"/>
-        <TextBlock Text="Отзовы" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="15"/>
+        <TextBlock Text="Рейтинг" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="16"/>
+        <TextBlock Text="Отзовы" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="17"/>
 
-        <TextBlock x:Name="tb_Name" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="30" Foreground="White"/>
-        <TextBlock x:Name="tb_Director" Grid.Column="2" Grid.Row="4" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_Name" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="34" Foreground="White" />
+        <TextBlock x:Name="tb_Director" Grid.Column="2" Grid.Row="4" FontSize="20" Foreground="White" MouseDown="tb_Director_MouseDown" MouseEnter="tb_Director_MouseEnter" MouseLeave="tb_Director_MouseLeave"/>
         <TextBlock x:Name="tb_Operator" Grid.Column="2" Grid.Row="7" FontSize="20" Foreground="White"/>
         <TextBlock x:Name="tb_Screenwriter" Grid.Column="2" Grid.Row="5" Grid.RowSpan="6" FontSize="20" Foreground="White"/>
         <TextBlock x:Name="tb_Year" Grid.Column="2" Grid.Row="2" FontSize="20" Foreground="White"/>
@@ -61,8 +63,10 @@
         <TextBlock x:Name="tb_Budget" Grid.Column="2" Grid.Row="11" FontSize="20" Foreground="White"/>
         <TextBlock x:Name="tb_Duration" Grid.Column="2" Grid.Row="12" FontSize="20" Foreground="White"/>
         <TextBlock x:Name="tb_Fees" Grid.Column="2" Grid.Row="13" FontSize="20" Foreground="White"/>
-        <TextBlock x:Name="tb_Awards" Grid.Column="2" Grid.Row="14" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_Awards" Grid.Column="2" Grid.Row="14" FontSize="20" Grid.RowSpan="15" Foreground="White"/>
+        <TextBlock x:Name="tb_Rating" Grid.Column="2" Grid.Row="16" FontSize="20"  Foreground="White"/>
+        
 
-        <Image x:Name="img_Poster" Width="700" Height="500" Grid.Column="0" Grid.Row="1" Grid.RowSpan="8"/>
+        <Image x:Name="img_Poster" Width="700" Height="500" Grid.Column="0" Grid.Row="1" Grid.RowSpan="12"/>
     </Grid>
 </Window>

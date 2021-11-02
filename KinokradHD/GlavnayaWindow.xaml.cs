@@ -52,5 +52,14 @@ namespace KinokradHD
             film_serial.Show();
             this.Close();
         }
+
+        private void searh_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (searh.Text != "")
+            {
+                fil.SelectedItem = null;
+                fil.SelectedItem = new ObservableCollection<Film>(bd_connection.connection.Film.Where(z => z.Title.Contains(searh.Text)).ToList());
+            }
+        }
     }
 }

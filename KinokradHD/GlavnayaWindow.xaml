@@ -14,7 +14,8 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <ListView ItemsSource="{Binding films}" Grid.Row="1" SelectionChanged="ListView_SelectionChanged">
+            <TextBox x:Name="searh" Grid.Row="0" Width="200" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" TextChanged="searh_TextChanged"/>
+            <ListView x:Name="fil" ItemsSource="{Binding films}" Grid.Row="1" SelectionChanged="ListView_SelectionChanged">
                 <ListView.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF461212" Offset="0"/>

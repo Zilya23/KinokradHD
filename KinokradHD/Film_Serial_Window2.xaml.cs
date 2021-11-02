@@ -28,6 +28,7 @@ namespace KinokradHD
             tb_BudgetS.Text = Convert.ToString(h.Budget);
             tb_DurationS.Text = Convert.ToString(h.Fees);
             tb_FeesS.Text = Convert.ToString(h.Duration) + "мин.";
+            tb_Count_episods.Text = Convert.ToString(h.Count_episodes);
 
             img_PosterS.Source = new BitmapImage(new Uri(h.Poster, UriKind.RelativeOrAbsolute));
         }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KinokradHD"
         mc:Ignorable="d"
-        Title="Film_Serial_Window2" Height="450" Width="800">
+        Title="Film_Serial_Window2" WindowState="Maximized">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FFE02323" Offset="0"/>
@@ -49,7 +49,8 @@
         <TextBlock Text="Сборы" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="12"/>
         <TextBlock Text="Продолжительность" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="13"/>
         <TextBlock Text="Награды" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="14"/>
-        <TextBlock Text="Отзовы" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="15"/>
+        <TextBlock Text="Кол-во эпизодов" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="15"/>
+        <TextBlock Text="Отзовы" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="16"/>
 
         <TextBlock x:Name="tb_NameS" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="30" Foreground="White"/>
         <TextBlock x:Name="tb_DirectorS" Grid.Column="2" Grid.Row="4" FontSize="20" Foreground="White"/>
@@ -61,7 +62,8 @@
         <TextBlock x:Name="tb_BudgetS" Grid.Column="2" Grid.Row="11" FontSize="20" Foreground="White"/>
         <TextBlock x:Name="tb_DurationS" Grid.Column="2" Grid.Row="12" FontSize="20" Foreground="White"/>
         <TextBlock x:Name="tb_FeesS" Grid.Column="2" Grid.Row="13" FontSize="20" Foreground="White"/>
-        <TextBlock x:Name="tb_AwardsS" Grid.Column="2" Grid.Row="14" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_Count_episods" Grid.Column="2" Grid.Row="14" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_AwardsS" Grid.Column="2" Grid.Row="15" FontSize="20" Foreground="White"/>
 
         <Image x:Name="img_PosterS" Width="700" Height="500" Grid.Column="0" Grid.Row="1" Grid.RowSpan="8"/>
     </Grid>

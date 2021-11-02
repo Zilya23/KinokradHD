@@ -79,6 +79,9 @@
     <Compile Include="Director.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
+    <Compile Include="DirectorWindow.xaml.cs">
+      <DependentUpon>DirectorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Feedback.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
@@ -158,6 +161,10 @@
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
     <Page Include="AutorisationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DirectorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
