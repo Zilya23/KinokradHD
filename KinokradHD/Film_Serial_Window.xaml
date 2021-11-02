@@ -55,7 +55,7 @@
 
         <TextBlock x:Name="tb_Name" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="34" Foreground="White" />
         <TextBlock x:Name="tb_Director" Grid.Column="2" Grid.Row="4" FontSize="20" Foreground="White" MouseDown="tb_Director_MouseDown" MouseEnter="tb_Director_MouseEnter" MouseLeave="tb_Director_MouseLeave"/>
-        <TextBlock x:Name="tb_Operator" Grid.Column="2" Grid.Row="7" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_Operator" Grid.Column="2" Grid.Row="7" FontSize="20" Foreground="White" MouseDown="tb_Operator_MouseDown" MouseEnter="tb_Operator_MouseEnter" MouseLeave="tb_Operator_MouseLeave" />
         <TextBlock x:Name="tb_Screenwriter" Grid.Column="2" Grid.Row="5" Grid.RowSpan="6" FontSize="20" Foreground="White"/>
         <TextBlock x:Name="tb_Year" Grid.Column="2" Grid.Row="2" FontSize="20" Foreground="White"/>
         <TextBlock x:Name="tb_Country" Grid.Column="2" Grid.Row="3" FontSize="20" Foreground="White"/>

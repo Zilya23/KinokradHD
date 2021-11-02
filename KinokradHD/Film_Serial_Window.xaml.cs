@@ -180,6 +180,28 @@ namespace KinokradHD
         {
             tb_Director.Foreground = new SolidColorBrush(Colors.White);
         }
+
+        private void tb_Operator_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            foreach (var o in result2)
+            {
+                OperatorWindow operatorWindow = new OperatorWindow(o);
+
+                operatorWindow.Show();
+                this.Close();
+            }
+
+        }
+
+        private void tb_Operator_MouseEnter(object sender, MouseEventArgs e)
+        {
+            tb_Operator.Foreground = new SolidColorBrush(Colors.Blue);
+        }
+
+        private void tb_Operator_MouseLeave(object sender, MouseEventArgs e)
+        {
+            tb_Operator.Foreground =new SolidColorBrush(Colors.White);
+        }
     }
     public class Film2
     {

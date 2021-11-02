@@ -124,6 +124,9 @@
     <Compile Include="Operator.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
+    <Compile Include="OperatorWindow.xaml.cs">
+      <DependentUpon>OperatorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rating.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
@@ -205,6 +208,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="OperatorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
