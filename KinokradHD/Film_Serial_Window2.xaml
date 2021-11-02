@@ -1,11 +1,11 @@
-﻿<Window x:Class="KinokradHD.Film_Serial_Window"
+﻿<Window x:Class="KinokradHD.Film_Serial_Window2"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KinokradHD"
         mc:Ignorable="d"
-        Title="Film_Serial_Window" WindowState="Maximized">
+        Title="Film_Serial_Window2" Height="450" Width="800">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FFE02323" Offset="0"/>
@@ -51,18 +51,18 @@
         <TextBlock Text="Награды" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="14"/>
         <TextBlock Text="Отзовы" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="15"/>
 
-        <TextBlock x:Name="tb_Name" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="30" Foreground="White"/>
-        <TextBlock x:Name="tb_Director" Grid.Column="2" Grid.Row="4" FontSize="20" Foreground="White"/>
-        <TextBlock x:Name="tb_Operator" Grid.Column="2" Grid.Row="7" FontSize="20" Foreground="White"/>
-        <TextBlock x:Name="tb_Screenwriter" Grid.Column="2" Grid.Row="5" Grid.RowSpan="6" FontSize="20" Foreground="White"/>
-        <TextBlock x:Name="tb_Year" Grid.Column="2" Grid.Row="2" FontSize="20" Foreground="White"/>
-        <TextBlock x:Name="tb_Country" Grid.Column="2" Grid.Row="3" FontSize="20" Foreground="White"/>
-        <TextBlock x:Name="tb_Actor" Grid.Column="2" Grid.Row="8" Grid.RowSpan="10" FontSize="20" Foreground="White"/>
-        <TextBlock x:Name="tb_Budget" Grid.Column="2" Grid.Row="11" FontSize="20" Foreground="White"/>
-        <TextBlock x:Name="tb_Duration" Grid.Column="2" Grid.Row="12" FontSize="20" Foreground="White"/>
-        <TextBlock x:Name="tb_Fees" Grid.Column="2" Grid.Row="13" FontSize="20" Foreground="White"/>
-        <TextBlock x:Name="tb_Awards" Grid.Column="2" Grid.Row="14" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_NameS" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="30" Foreground="White"/>
+        <TextBlock x:Name="tb_DirectorS" Grid.Column="2" Grid.Row="4" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_OperatorS" Grid.Column="2" Grid.Row="7" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_ScreenwriterS" Grid.Column="2" Grid.Row="5" Grid.RowSpan="6" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_YearS" Grid.Column="2" Grid.Row="2" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_CountryS" Grid.Column="2" Grid.Row="3" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_ActorS" Grid.Column="2" Grid.Row="8" Grid.RowSpan="10" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_BudgetS" Grid.Column="2" Grid.Row="11" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_DurationS" Grid.Column="2" Grid.Row="12" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_FeesS" Grid.Column="2" Grid.Row="13" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_AwardsS" Grid.Column="2" Grid.Row="14" FontSize="20" Foreground="White"/>
 
-        <Image x:Name="img_Poster" Width="700" Height="500" Grid.Column="0" Grid.Row="1" Grid.RowSpan="8"/>
+        <Image x:Name="img_PosterS" Width="700" Height="500" Grid.Column="0" Grid.Row="1" Grid.RowSpan="8"/>
     </Grid>
 </Window>

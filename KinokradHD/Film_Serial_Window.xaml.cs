@@ -48,7 +48,7 @@ namespace KinokradHD
             tb_Country.Text = n.Country;
             tb_Budget.Text = Convert.ToString(n.Budget);
             tb_Duration.Text = Convert.ToString(n.Fees);
-            tb_Fees.Text = Convert.ToString(n.Duration) + "м.";
+            tb_Fees.Text = Convert.ToString(n.Duration) + "мин.";
 
             img_Poster.Source = new BitmapImage(new Uri(n.Poster, UriKind.RelativeOrAbsolute));
 

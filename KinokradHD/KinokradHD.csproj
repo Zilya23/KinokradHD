@@ -106,6 +106,9 @@
     <Compile Include="Film_Serial_Window.xaml.cs">
       <DependentUpon>Film_Serial_Window.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Film_Serial_Window2.xaml.cs">
+      <DependentUpon>Film_Serial_Window2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Genre.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
@@ -159,6 +162,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Film_Serial_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Film_Serial_Window2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

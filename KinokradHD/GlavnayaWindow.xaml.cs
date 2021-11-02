@@ -43,5 +43,14 @@ namespace KinokradHD
             film_serial.Show();
             this.Close();
         }
+
+        private void ListView_SelectionChanged2(object sender, SelectionChangedEventArgs e)
+        {
+            var h = (sender as ListView).SelectedItem as Serias;
+
+            Film_Serial_Window2 film_serial = new Film_Serial_Window2(h);
+            film_serial.Show();
+            this.Close();
+        }
     }
 }
