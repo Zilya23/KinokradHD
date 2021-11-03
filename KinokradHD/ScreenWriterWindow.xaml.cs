@@ -15,19 +15,19 @@ using System.Windows.Shapes;
 namespace KinokradHD
 {
     /// <summary>
-    /// Логика взаимодействия для OperatorWindow.xaml
+    /// Логика взаимодействия для ScreenWriterWindow.xaml
     /// </summary>
-    public partial class OperatorWindow : Window
+    public partial class ScreenWriterWindow : Window
     {
-        public OperatorWindow(Operator2 result2)
+        public ScreenWriterWindow(ScreenWriter2 resultScr2)
         {
             InitializeComponent();
-            var operators = bd_connection.connection.Operator.Where(x => x.ID_Operator == result2.idOperator2).FirstOrDefault();
-            tb_NameO.Text = operators.Name + " " + operators.Surname;
-            tb_BirthdayO.Text = (Convert.ToString(operators.Birthday).Split(' '))[0];
+            var screenwriters = bd_connection.connection.Screenwriter.Where(x => x.ID_Screenwriter == resultScr2.idScreenWriter2).FirstOrDefault();
+            tb_NameS.Text = screenwriters.Name + " " + screenwriters.Surname;
+            tb_BirthdayS.Text = (Convert.ToString(screenwriters.Birthday).Split(' '))[0];
         }
 
-        private void Obtn_back_Click(object sender, RoutedEventArgs e)
+        private void Sbtn_back_Click(object sender, RoutedEventArgs e)
         {
             GlavnayaWindow glavnaya = new GlavnayaWindow();
             glavnaya.Show();

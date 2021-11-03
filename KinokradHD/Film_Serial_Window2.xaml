@@ -36,6 +36,8 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Button x:Name="btn_back" Content="Назад" Width="50" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btn_back_Click" />
 
@@ -50,21 +52,23 @@
         <TextBlock Text="Продолжительность" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="13"/>
         <TextBlock Text="Награды" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="14"/>
         <TextBlock Text="Кол-во эпизодов" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="15"/>
-        <TextBlock Text="Отзовы" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="16"/>
+        <TextBlock Text="Рейтинг"  Grid.Column="1" Grid.Row="16" FontSize="20" Foreground="White"/>
+        <TextBlock  x:Name="tb_FeedbackS" Text="Отзовы" FontSize="20" Foreground="White" Grid.Column="0" Grid.Row="14"  Grid.RowSpan="15"  HorizontalAlignment="Center" VerticalAlignment="Top" MouseDown="tb_FeedBackS_MouseDown" MouseEnter="tb_FeedBackS_MouseEnter" MouseLeave="tb_FeedBackS_MouseLeave"/>
 
-        <TextBlock x:Name="tb_NameS" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" FontSize="30" Foreground="White"/>
-        <TextBlock x:Name="tb_DirectorS" Grid.Column="2" Grid.Row="4" FontSize="20" Foreground="White"/>
-        <TextBlock x:Name="tb_OperatorS" Grid.Column="2" Grid.Row="7" FontSize="20" Foreground="White"/>
-        <TextBlock x:Name="tb_ScreenwriterS" Grid.Column="2" Grid.Row="5" Grid.RowSpan="6" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_NameS" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" Foreground="White"/>
+        <TextBlock x:Name="tb_DirectorS" Grid.Column="2" Grid.Row="4" FontSize="20" Foreground="White" MouseDown="tb_DirectorS_MouseDown" MouseEnter="tb_DirectorS_MouseEnter" MouseLeave="tb_DirectorS_MouseLeave"/>
+        <TextBlock x:Name="tb_OperatorS" Grid.Column="2" Grid.Row="7" FontSize="20" Foreground="White" MouseDown="tb_OperatorS_MouseDown" MouseEnter="tb_OperatorS_MouseEnter" MouseLeave="tb_OperatorS_MouseLeave"/>
+        <TextBlock x:Name="tb_ScreenwriterS" Grid.Column="2" Grid.Row="5"  FontSize="20" Foreground="White" MouseDown="tb_ScreenwriterS_MouseDown" MouseEnter="tb_ScreenwriterS_MouseEnter" MouseLeave="tb_ScreenwriterS_MouseLeave"/>
         <TextBlock x:Name="tb_YearS" Grid.Column="2" Grid.Row="2" FontSize="20" Foreground="White"/>
         <TextBlock x:Name="tb_CountryS" Grid.Column="2" Grid.Row="3" FontSize="20" Foreground="White"/>
-        <TextBlock x:Name="tb_ActorS" Grid.Column="2" Grid.Row="8" Grid.RowSpan="10" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_ActorS" Grid.Column="2" Grid.Row="8" Grid.RowSpan="10" FontSize="20" Foreground="White" MouseDown="tb_ActorS_MouseDown" MouseEnter="tb_ActorS_MouseEnter" MouseLeave="tb_ActorS_MouseLeave"/>
         <TextBlock x:Name="tb_BudgetS" Grid.Column="2" Grid.Row="11" FontSize="20" Foreground="White"/>
         <TextBlock x:Name="tb_DurationS" Grid.Column="2" Grid.Row="12" FontSize="20" Foreground="White"/>
         <TextBlock x:Name="tb_FeesS" Grid.Column="2" Grid.Row="13" FontSize="20" Foreground="White"/>
         <TextBlock x:Name="tb_Count_episods" Grid.Column="2" Grid.Row="14" FontSize="20" Foreground="White"/>
         <TextBlock x:Name="tb_AwardsS" Grid.Column="2" Grid.Row="15" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_RatingS" Grid.Column="2" Grid.Row="16" FontSize="20" Foreground="White"/>
 
-        <Image x:Name="img_PosterS" Width="700" Height="500" Grid.Column="0" Grid.Row="1" Grid.RowSpan="8"/>
+        <Image x:Name="img_PosterS" Width="700" Height="500" Grid.Column="0" Grid.Row="1" Grid.RowSpan="13"/>
     </Grid>
 </Window>

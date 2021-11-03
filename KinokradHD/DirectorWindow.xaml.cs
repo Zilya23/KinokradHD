@@ -28,6 +28,16 @@ namespace KinokradHD
           var director = bd_connection.connection.Director.Where(x => x.ID_Director == resultDir.idDirector2).FirstOrDefault();
             tb_NameD.Text = director.Name + " " + director.Surname;
             tb_BirthdayD.Text = (Convert.ToString(director.Birthday).Split(' '))[0];
+
+            //img_PosterD.Source = new BitmapImage(new Uri(resultDir.Poster, UriKind.RelativeOrAbsolute));
+        }
+
+
+        private void Dbtn_back_Click(object sender, RoutedEventArgs e)
+        {
+            GlavnayaWindow glavnaya = new GlavnayaWindow();
+            glavnaya.Show();
+            this.Close();
         }
     }
 }

@@ -85,6 +85,12 @@
     <Compile Include="Feedback.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
+    <Compile Include="FeedBackSerialWindow.xaml.cs">
+      <DependentUpon>FeedBackSerialWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FeedBackWindow.xaml.cs">
+      <DependentUpon>FeedBackWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Film.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
@@ -136,6 +142,9 @@
     <Compile Include="Screenwriter.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
+    <Compile Include="ScreenWriterWindow.xaml.cs">
+      <DependentUpon>ScreenWriterWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Serias.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
@@ -168,6 +177,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DirectorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FeedBackSerialWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FeedBackWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -213,6 +230,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RegistrationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScreenWriterWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -262,6 +283,110 @@
       <DependentUpon>DBconnect.edmx</DependentUpon>
       <LastGenOutput>DBconnect.cs</LastGenOutput>
     </Content>
+    <Resource Include="img\10a.jpg" />
+    <Resource Include="img\10d.jpg" />
+    <Resource Include="img\10o.jpg" />
+    <Resource Include="img\10sc.jpg" />
+    <Resource Include="img\11a.jpg" />
+    <Resource Include="img\11d.jpg" />
+    <Resource Include="img\11o.jpg" />
+    <Resource Include="img\11sc.jpg" />
+    <Resource Include="img\12a.jpg" />
+    <Resource Include="img\12d.jpg" />
+    <Resource Include="img\12o.jpg" />
+    <Resource Include="img\12sc.jpg" />
+    <Resource Include="img\13a.jpg" />
+    <Resource Include="img\13d.jpg" />
+    <Resource Include="img\13o.jpg" />
+    <Resource Include="img\13sc.jpg" />
+    <Resource Include="img\14a.jpg" />
+    <Resource Include="img\14d.jpg" />
+    <Resource Include="img\14o.jpg" />
+    <Resource Include="img\14sc.jpg" />
+    <Resource Include="img\15a.jpg" />
+    <Resource Include="img\15d.jpg" />
+    <Resource Include="img\15o.jpg" />
+    <Resource Include="img\15sc.jpg" />
+    <Resource Include="img\16a.jpg" />
+    <Resource Include="img\16d.jpg" />
+    <Resource Include="img\16o.jpg" />
+    <Resource Include="img\16sc.jpg" />
+    <Resource Include="img\17a.jpg" />
+    <Resource Include="img\17d.jpg" />
+    <Resource Include="img\17o.jpg" />
+    <Resource Include="img\17sc.jpg" />
+    <Resource Include="img\18a.jpg" />
+    <Resource Include="img\18d.jpg" />
+    <Resource Include="img\18o.jpg" />
+    <Resource Include="img\18sc.jpg" />
+    <Resource Include="img\19a.jpg" />
+    <Resource Include="img\19d.jpg" />
+    <Resource Include="img\19o.jpg" />
+    <Resource Include="img\19sc.jpg" />
+    <Resource Include="img\1a.jpg" />
+    <Resource Include="img\1d.jpg" />
+    <Resource Include="img\1o.jpg" />
+    <Resource Include="img\1sc.jpg" />
+    <Resource Include="img\20a.jpg" />
+    <Resource Include="img\20d.jpg" />
+    <Resource Include="img\20sc.jpg" />
+    <Resource Include="img\21a.jpg" />
+    <Resource Include="img\21d.jpg" />
+    <Resource Include="img\21sc.jpg" />
+    <Resource Include="img\22a.jpg" />
+    <Resource Include="img\22d.jpg" />
+    <Resource Include="img\22sc.jpg" />
+    <Resource Include="img\23a.jpg" />
+    <Resource Include="img\23sc.jpg" />
+    <Resource Include="img\24a.jpg" />
+    <Resource Include="img\24sc.jpg" />
+    <Resource Include="img\25a.jpg" />
+    <Resource Include="img\26a.jpg" />
+    <Resource Include="img\27a.jpg" />
+    <Resource Include="img\28a.jpg" />
+    <Resource Include="img\29a.jpg" />
+    <Resource Include="img\2a.jpg" />
+    <Resource Include="img\2d.jpg" />
+    <Resource Include="img\2o.jpg" />
+    <Resource Include="img\2sc.jpg" />
+    <Resource Include="img\30a.jpg" />
+    <Resource Include="img\31a.jpg" />
+    <Resource Include="img\32a.jpg" />
+    <Resource Include="img\33a.jpg" />
+    <Resource Include="img\34a.jpg" />
+    <Resource Include="img\35a.jpg" />
+    <Resource Include="img\36a.jpg" />
+    <Resource Include="img\37a.jpg" />
+    <Resource Include="img\38a.jpg" />
+    <Resource Include="img\39a.jpg" />
+    <Resource Include="img\3a.jpg" />
+    <Resource Include="img\3d.jpg" />
+    <Resource Include="img\3o.jpg" />
+    <Resource Include="img\3sc.jpg" />
+    <Resource Include="img\4a.jpg" />
+    <Resource Include="img\4d.jpg" />
+    <Resource Include="img\4o.jpg" />
+    <Resource Include="img\4sc.jpg" />
+    <Resource Include="img\5a.jpg" />
+    <Resource Include="img\5d.jpg" />
+    <Resource Include="img\5o.jpg" />
+    <Resource Include="img\5sc.jpg" />
+    <Resource Include="img\6a.jpg" />
+    <Resource Include="img\6d.jpg" />
+    <Resource Include="img\6o.jpg" />
+    <Resource Include="img\6sc.jpg" />
+    <Resource Include="img\7a.jpg" />
+    <Resource Include="img\7d.jpg" />
+    <Resource Include="img\7o.jpg" />
+    <Resource Include="img\7sc.jpg" />
+    <Resource Include="img\8a.jpg" />
+    <Resource Include="img\8d.jpg" />
+    <Resource Include="img\8o.jpg" />
+    <Resource Include="img\8sc.jpg" />
+    <Resource Include="img\9a.jpg" />
+    <Resource Include="img\9d.jpg" />
+    <Resource Include="img\9o.jpg" />
+    <Resource Include="img\9sc.jpg" />
     <Resource Include="img\1.jpg" />
     <Resource Include="img\10.jpg" />
     <Resource Include="img\10s.jpg" />

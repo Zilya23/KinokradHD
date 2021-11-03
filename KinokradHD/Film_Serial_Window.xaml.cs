@@ -37,6 +37,8 @@ namespace KinokradHD
         public static ObservableCollection<Film_Nomination> svazy5 { get; set; }
         public static ObservableCollection<Awards> awards { get; set; }
 
+        public static ObservableCollection<Genre> genres { get; set; }
+        public static ObservableCollection<Film_Genre> svazy6 { get; set; }
 
         public static IEnumerable<Film2> result { get; set; }
         public static IEnumerable<Operator2> result2 { get; set; }
@@ -201,6 +203,44 @@ namespace KinokradHD
         private void tb_Operator_MouseLeave(object sender, MouseEventArgs e)
         {
             tb_Operator.Foreground =new SolidColorBrush(Colors.White);
+        }
+
+        private void tb_Screenwriter_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            foreach (var s in resultScr2)
+            {
+                ScreenWriterWindow screenWriterWindow = new ScreenWriterWindow(s);
+                screenWriterWindow.Show();
+                this.Close();
+            }
+            
+        }
+
+        private void tb_Screenwriter_MouseEnter(object sender, MouseEventArgs e)
+        {
+            tb_Screenwriter.Foreground = new SolidColorBrush(Colors.Blue);
+        }
+
+        private void tb_Screenwriter_MouseLeave(object sender, MouseEventArgs e)
+        {
+            tb_Screenwriter.Foreground = new SolidColorBrush(Colors.White);
+        }
+
+        private void tb_FeedBack_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            FeedBackWindow feedBackWindow = new FeedBackWindow();
+            feedBackWindow.Show();
+ 
+        }
+
+        private void tb_FeedBack_MouseEnter(object sender, MouseEventArgs e)
+        {
+            tb_FeedBack.Foreground = new SolidColorBrush(Colors.Blue);
+        }
+
+        private void tb_FeedBack_MouseLeave(object sender, MouseEventArgs e)
+        {
+            tb_FeedBack.Foreground = new SolidColorBrush(Colors.White);
         }
     }
     public class Film2

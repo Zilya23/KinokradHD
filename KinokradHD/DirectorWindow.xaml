@@ -28,9 +28,12 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Button x:Name="btn_back" Content="Назад" Width="50" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Dbtn_back_Click" />
         <TextBlock Text="Дата рождения" FontSize="20" Foreground="White" Grid.Column="1" Grid.Row="1"/>
 
         <TextBlock x:Name="tb_NameD" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="34" Foreground="White" />
         <TextBlock x:Name="tb_BirthdayD" Grid.Column="2" Grid.Row="1" FontSize="20" Foreground="White"/>
+
+        <Image x:Name="img_PosterD" Width="200" Height="300" Grid.Column="0" Grid.Row="1" Grid.RowSpan="5"/>
     </Grid>
 </Window>
