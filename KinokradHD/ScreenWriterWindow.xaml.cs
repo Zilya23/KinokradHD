@@ -25,6 +25,7 @@ namespace KinokradHD
             var screenwriters = bd_connection.connection.Screenwriter.Where(x => x.ID_Screenwriter == resultScr2.idScreenWriter2).FirstOrDefault();
             tb_NameS.Text = screenwriters.Name + " " + screenwriters.Surname;
             tb_BirthdayS.Text = (Convert.ToString(screenwriters.Birthday).Split(' '))[0];
+            img_PosterS.Source = new BitmapImage(new Uri(screenwriters.Poster, UriKind.RelativeOrAbsolute));
         }
 
         private void Sbtn_back_Click(object sender, RoutedEventArgs e)

@@ -25,6 +25,7 @@ namespace KinokradHD
             var operators = bd_connection.connection.Operator.Where(x => x.ID_Operator == result2.idOperator2).FirstOrDefault();
             tb_NameO.Text = operators.Name + " " + operators.Surname;
             tb_BirthdayO.Text = (Convert.ToString(operators.Birthday).Split(' '))[0];
+            img_PosterO.Source = new BitmapImage(new Uri(operators.Poster, UriKind.RelativeOrAbsolute));
         }
 
         private void Obtn_back_Click(object sender, RoutedEventArgs e)

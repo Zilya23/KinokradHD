@@ -44,16 +44,16 @@ namespace KinokradHD
         public static ObservableCollection<Serias_Genre> svazy6 { get; set; }
 
         public static IEnumerable<Serial2> results { get; set; }
-        public static IEnumerable<DirectorS> resultsDir { get; set; }
+        public static IEnumerable<Director2> resultsDir { get; set; }
 
         public static IEnumerable<Serial2> resultsOper { get; set; }
         public static IEnumerable<Operator2> resultsOper2 { get; set; }
 
         public static IEnumerable<Serial2> resultsScr { get; set; }
-        public static IEnumerable<ScreenWriterS> resultScr2 { get; set; }
+        public static IEnumerable<ScreenWriter2> resultsScr2 { get; set; }
 
         public static IEnumerable<Serial2> resultsActr { get; set; }
-        public static IEnumerable<ActorS> resultsActr2 { get; set; }
+        public static IEnumerable<Actor2> resultsActr2 { get; set; }
 
         public static IEnumerable<RatingS> resultsRat { get; set; }
 
@@ -98,13 +98,13 @@ namespace KinokradHD
             svazy6 = new ObservableCollection<Serias_Genre>(bd_connection.connection.Serias_Genre.ToList());
 
             resultsDir = from s in serias
-                      join r in svazys on s.ID_Serias equals r.ID_Serias
-                      join t in directorss on r.ID_Director equals t.ID_Director
-                      where h.ID_Serias == s.ID_Serias
-                      select new DirectorS { idDirs = t.ID_Director, nameDirS = t.Name, surDirS = t.Surname };
-                         
+                         join r in svazys on s.ID_Serias equals r.ID_Serias
+                         join t in directorss on r.ID_Director equals t.ID_Director
+                         where h.ID_Serias == s.ID_Serias
+                         select new Director2 { idDirector2 = t.ID_Director, nameDir = t.Name, surDir = t.Surname };
+
             foreach (var i in resultsDir)
-                tb_DirectorS.Text += (i.nameDirS + " " + i.surDirS);
+                tb_DirectorS.Text += (i.nameDir + " " + i.surDir);
 
             resultsOper = from s in serias
                           join t in svazys2 on s.ID_Serias equals t.ID_Serias
@@ -112,7 +112,7 @@ namespace KinokradHD
                           select new Serial2 { idOpers = t.ID_Operator, idSerias = s.ID_Serias };
             resultsOper2 = from o in operatorss
                            join t in resultsOper on o.ID_Operator equals t.idOpers
-                           select new Operator2 {idOperator2 = o.ID_Operator, nameOper = o.Name, surOper = o.Surname };
+                           select new Operator2 { idOperator2 = o.ID_Operator, nameOper = o.Name, surOper = o.Surname };
             foreach (var i in resultsOper2)
                 tb_OperatorS.Text += (i.nameOper + " " + i.surOper);
 
@@ -120,11 +120,11 @@ namespace KinokradHD
                          join t in svazys3 on s.ID_Serias equals t.ID_Serias
                          where h.ID_Serias == s.ID_Serias
                          select new Serial2 { idScreWriters = t.ID_Screenwriter, idSerias = s.ID_Serias };
-            resultScr2 = from s in screenwriterss
+            resultsScr2 = from s in screenwriterss
                          join t in resultsScr on s.ID_Screenwriter equals t.idScreWriters
-                         select new ScreenWriterS {idScreWriters = s.ID_Screenwriter, nameScrS = s.Name, surScrS = s.Surname };
-            foreach (var i in resultScr2)
-                tb_ScreenwriterS.Text += (i.nameScrS + " " + i.surScrS + "  " );
+                         select new ScreenWriter2 { idScreenWriter2 = s.ID_Screenwriter, nameScr = s.Name, surScr = s.Surname };
+            foreach (var i in resultsScr2)
+                tb_ScreenwriterS.Text += (i.nameScr + " " + i.surScr + "  ");
 
             resultsActr = from s in serias
                           join t in svazys4 on s.ID_Serias equals t.ID_Serias
@@ -132,9 +132,9 @@ namespace KinokradHD
                           select new Serial2 { idActors = t.ID_Actor, idSerias = s.ID_Serias };
             resultsActr2 = from a in actorss
                            join t in resultsActr on a.ID_Actor equals t.idActors
-                           select new ActorS { idActors = t.idActors, nameActrS = a.Name, surActorS = a.Surname };
+                           select new Actor2 { idActor2 = a.ID_Actor, nameActr = a.Name, surActor = a.Surname };
             foreach (var i in resultsActr2)
-                tb_ActorS.Text += (i.nameActrS + " " + i.surActorS + "\n");
+                tb_ActorS.Text += (i.nameActr + " " + i.surActor + "\n");
 
             resultsRat = from s in serias
                          join r in ratingss on s.ID_Rating equals r.ID_Rating
@@ -180,7 +180,13 @@ namespace KinokradHD
 
         private void tb_DirectorS_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            foreach (var d in resultsDir)
+            {
+                DirectorWindow directorWindow = new DirectorWindow(d);
 
+                directorWindow.Show();
+                this.Close();
+            }
         }
 
         private void tb_DirectorS_MouseEnter(object sender, MouseEventArgs e)
@@ -216,6 +222,12 @@ namespace KinokradHD
 
         private void tb_ScreenwriterS_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            foreach (var s in resultsScr2)
+            {
+                ScreenWriterWindow screenWriterWindow = new ScreenWriterWindow(s);
+                screenWriterWindow.Show();
+                this.Close();
+            }
 
         }
 
@@ -231,6 +243,12 @@ namespace KinokradHD
 
         private void tb_ActorS_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            foreach (var ac in resultsActr2)
+            {
+                ActorWindow actorWindow = new ActorWindow(ac);
+                actorWindow.Show();
+                this.Close();
+            }
 
         }
 
@@ -244,7 +262,7 @@ namespace KinokradHD
             tb_ActorS.Foreground = new SolidColorBrush(Colors.White);
         }
     }
-    public class Serial2 
+    public class Serial2
     {
         public int idSerias { get; set; }
         public int idDirs { get; set; }
@@ -253,20 +271,13 @@ namespace KinokradHD
         public int idActors { get; set; }
         public int idGenres { get; set; }
     }
-    public class DirectorS
+    public class Director2
     {
-        public string nameDirS { get; set; }
-        public string surDirS { get; set; }
-        public int  idDirs { get; set; }
-
+        public string nameDir { get; set; }
+        public string surDir { get; set; }
+        public int idDirector2 { get; set; }
     }
-    //public class Operator2
-    //{
-    //    public string nameOperS { get; set; }
-    //    public string surOperS { get; set; }
-    //    public int idOpers { get; set; }
-
-    //}
+ 
 
     public class Operator2
     {
@@ -276,21 +287,18 @@ namespace KinokradHD
 
     }
 
-    public class ScreenWriterS
+    public class ScreenWriter2
     {
-        public string nameScrS { get; set; }
-        public string surScrS { get; set; }
-        public int idScreWriters { get; set; }
-    }
+        public string nameScr { get; set; }
+        public string surScr { get; set; }
+        public int idScreenWriter2 { get; set; }
     }
 
-    public class ActorS
+    public class Actor2
     {
-        public string nameActrS { get; set; }
-        public string surActorS { get; set; }
-        public int idActors { get; set; }
-
-    
+        public string nameActr { get; set; }
+        public string surActor { get; set; }
+        public int idActor2 { get; set; }
     }
     public class RatingS
     {
@@ -304,5 +312,6 @@ namespace KinokradHD
         public string nameNominationS { get; set; }
         public int idAwardsS { get; set; }
     }
+}
 
 

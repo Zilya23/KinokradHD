@@ -60,7 +60,7 @@
         <TextBlock x:Name="tb_Screenwriter" Grid.Column="2" Grid.Row="5"   FontSize="20" Foreground="White" MouseDown="tb_Screenwriter_MouseDown" MouseEnter="tb_Screenwriter_MouseEnter" MouseLeave="tb_Screenwriter_MouseLeave"/>
         <TextBlock x:Name="tb_Year" Grid.Column="2" Grid.Row="2" FontSize="20" Foreground="White"/>
         <TextBlock x:Name="tb_Country" Grid.Column="2" Grid.Row="3" FontSize="20" Foreground="White"/>
-        <TextBlock x:Name="tb_Actor" Grid.Column="2" Grid.Row="9" Grid.RowSpan="10" FontSize="20" Foreground="White"/>
+        <TextBlock x:Name="tb_Actor" Grid.Column="2" Grid.Row="9" Grid.RowSpan="10" FontSize="20" Foreground="White" MouseDown="td_Actor_MouseDown" MouseEnter="tb_Actor_MouseEnter" MouseLeave="tb_Actor_MouseLeave"/>
         <TextBlock x:Name="tb_Budget" Grid.Column="2" Grid.Row="12" FontSize="20" Foreground="White"/>
         <TextBlock x:Name="tb_Duration" Grid.Column="2" Grid.Row="13" FontSize="20" Foreground="White"/>
         <TextBlock x:Name="tb_Fees" Grid.Column="2" Grid.Row="14" FontSize="20" Foreground="White"/>

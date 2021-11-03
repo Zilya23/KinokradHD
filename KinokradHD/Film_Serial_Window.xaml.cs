@@ -115,25 +115,19 @@ namespace KinokradHD
             foreach (var i in resultScr2)
                 tb_Screenwriter.Text += (i.nameScr + " " + i.surScr + "\n");
 
-            int por = 0;
             resultActor = from f in films
                           join t in svazy4 on f.ID_Film equals t.ID_Film
                           where n.ID_Film == f.ID_Film
                           select new Film2 { idActot = t.ID_Actor, idFilm = f.ID_Film };
             resultActor2 = from a in actors
                            join t in resultActor on a.ID_Actor equals t.idActot
-                           select new Actor2 { idActor2 = a.ID_Actor, nameActr = a.Name, surActor = a.Surname, poryadok = por++};
+                           select new Actor2 { idActor2 = a.ID_Actor, nameActr = a.Name, surActor = a.Surname};
             
             foreach (var i in resultActor2)
             { 
                 tb_Actor.Text += (i.nameActr + " " + i.surActor + "\n");
-                ActorId += Convert.ToString(i.idActor2) + " ";
             }
 
-            string[] idAct = ActorId.Split(' ');
-            int lenght = idAct.Length;
-
-                
 
             resultRating = from f in films
                            join r in ratings on f.ID_Rating equals r.ID_Rating
@@ -242,6 +236,26 @@ namespace KinokradHD
         {
             tb_FeedBack.Foreground = new SolidColorBrush(Colors.White);
         }
+
+        private void td_Actor_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            foreach (var ac in resultActor2)
+            {
+                ActorWindow actorWindow = new ActorWindow(ac);
+                actorWindow.Show();
+                this.Close();
+            }
+        }
+
+        private void tb_Actor_MouseEnter(object sender, MouseEventArgs e)
+        {
+            tb_Actor.Foreground = new SolidColorBrush(Colors.Blue);
+        }
+
+        private void tb_Actor_MouseLeave(object sender, MouseEventArgs e)
+        {
+            tb_Actor.Foreground = new SolidColorBrush(Colors.White);
+        }
     }
     public class Film2
     {
@@ -280,8 +294,7 @@ namespace KinokradHD
         public string nameActr { get; set; }
         public string surActor { get; set; }
         public int idActor2 { get; set; }
-    public int poryadok = 0;
-}
+    }
     public class Rating2
     {
         public string nameRating { get; set; }

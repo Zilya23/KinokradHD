@@ -33,7 +33,9 @@
 
         <TextBlock x:Name="tb_NameO" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="34" Foreground="White" />
         <TextBlock x:Name="tb_BirthdayO" Grid.Column="2" Grid.Row="1" FontSize="20" Foreground="White"/>
-        
-        
+
+        <Image x:Name="img_PosterO" Width="200" Height="300" Grid.Column="0" Grid.Row="1" Grid.RowSpan="5"/>
+
+
     </Grid>
 </Window>

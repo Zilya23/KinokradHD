@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище KinokradHDModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище KinokradHDModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Actor">
           <Key>
             <PropertyRef Name="ID_Actor" />
@@ -14,6 +14,7 @@
           <Property Name="Surname" Type="varchar(max)" />
           <Property Name="Birthday" Type="date" />
           <Property Name="Actor_Raiting" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Poster" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Awards">
           <Key>
@@ -33,6 +34,7 @@
           <Property Name="Surname" Type="varchar(max)" />
           <Property Name="Birthday" Type="date" />
           <Property Name="Director_Rating" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Poster" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Feedback">
           <Key>
@@ -131,6 +133,7 @@
           <Property Name="Surname" Type="varchar(max)" />
           <Property Name="Birthday" Type="date" />
           <Property Name="Operator_Raiting" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Poster" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Rating">
           <Key>
@@ -148,6 +151,7 @@
           <Property Name="Surname" Type="varchar(max)" />
           <Property Name="Birthday" Type="date" />
           <Property Name="Screenwriter_Raing" Type="int" />
+          <Property Name="Poster" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Serias">
           <Key>
@@ -754,8 +758,7 @@
             <End Role="Serias_Screenwriter" EntitySet="Serias_Screenwriter" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="KinokradHDModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -770,6 +773,7 @@
           <Property Name="Actor_Raiting" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="Film_Actor" Relationship="Self.FK_Film_Actor_Actor" FromRole="Actor" ToRole="Film_Actor" />
           <NavigationProperty Name="Serias_Actor" Relationship="Self.FK_Serias_Actor_Actor" FromRole="Actor" ToRole="Serias_Actor" />
+          <Property Name="Poster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Awards">
           <Key>
@@ -792,6 +796,7 @@
           <Property Name="Director_Rating" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="Film_Director" Relationship="Self.FK_Film_Director_Director" FromRole="Director" ToRole="Film_Director" />
           <NavigationProperty Name="Serias_Director" Relationship="Self.FK_Serias_Director_Director" FromRole="Director" ToRole="Serias_Director" />
+          <Property Name="Poster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Feedback">
           <Key>
@@ -920,6 +925,7 @@
           <Property Name="Operator_Raiting" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="Film_Operator" Relationship="Self.FK_Film_Operator_Operator" FromRole="Operator" ToRole="Film_Operator" />
           <NavigationProperty Name="Serias_Operator" Relationship="Self.FK_Serias_Operator_Operator" FromRole="Operator" ToRole="Serias_Operator" />
+          <Property Name="Poster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Rating">
           <Key>
@@ -941,6 +947,7 @@
           <Property Name="Screenwriter_Raing" Type="Int32" />
           <NavigationProperty Name="Film_Screenwriter" Relationship="Self.FK_Film_Screenwriter_Screenwriter" FromRole="Screenwriter" ToRole="Film_Screenwriter" />
           <NavigationProperty Name="Serias_Screenwriter" Relationship="Self.FK_Serias_Screenwriter_Screenwriter" FromRole="Screenwriter" ToRole="Serias_Screenwriter" />
+          <Property Name="Poster" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Serias">
           <Key>
@@ -1579,6 +1586,7 @@
           <EntitySetMapping Name="Actor">
             <EntityTypeMapping TypeName="KinokradHDModel.Actor">
               <MappingFragment StoreEntitySet="Actor">
+                <ScalarProperty Name="Poster" ColumnName="Poster" />
                 <ScalarProperty Name="ID_Actor" ColumnName="ID_Actor" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
@@ -1600,6 +1608,7 @@
           <EntitySetMapping Name="Director">
             <EntityTypeMapping TypeName="KinokradHDModel.Director">
               <MappingFragment StoreEntitySet="Director">
+                <ScalarProperty Name="Poster" ColumnName="Poster" />
                 <ScalarProperty Name="ID_Director" ColumnName="ID_Director" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
@@ -1709,6 +1718,7 @@
           <EntitySetMapping Name="Operator">
             <EntityTypeMapping TypeName="KinokradHDModel.Operator">
               <MappingFragment StoreEntitySet="Operator">
+                <ScalarProperty Name="Poster" ColumnName="Poster" />
                 <ScalarProperty Name="ID_Operator" ColumnName="ID_Operator" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
@@ -1728,6 +1738,7 @@
           <EntitySetMapping Name="Screenwriter">
             <EntityTypeMapping TypeName="KinokradHDModel.Screenwriter">
               <MappingFragment StoreEntitySet="Screenwriter">
+                <ScalarProperty Name="Poster" ColumnName="Poster" />
                 <ScalarProperty Name="ID_Screenwriter" ColumnName="ID_Screenwriter" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />

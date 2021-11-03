@@ -26,6 +26,7 @@ namespace KinokradHD
         public string Surname { get; set; }
         public Nullable<System.DateTime> Birthday { get; set; }
         public Nullable<decimal> Actor_Raiting { get; set; }
+        public string Poster { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Film_Actor> Film_Actor { get; set; }

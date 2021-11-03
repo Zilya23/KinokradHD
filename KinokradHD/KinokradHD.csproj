@@ -67,6 +67,9 @@
     <Compile Include="Actor.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
+    <Compile Include="ActorWindow.xaml.cs">
+      <DependentUpon>ActorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Awards.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
@@ -172,6 +175,10 @@
     <Compile Include="User.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
+    <Page Include="ActorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AutorisationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
