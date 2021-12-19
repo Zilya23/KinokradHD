@@ -15,6 +15,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <TextBox x:Name="searh" Grid.Row="0" Width="200" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" TextChanged="searh_TextChanged"/>
+            <Button x:Name="Add_Film" Grid.Row="0" Width="60" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Content="ADD FILM" Click="Add_Film_Click" />
             <ListView x:Name="fil" ItemsSource="{Binding films}" Grid.Row="1" SelectionChanged="ListView_SelectionChanged">
                 <ListView.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -47,7 +48,7 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <ListView ItemsSource="{Binding seriass}" Grid.Row="2" SelectionChanged="ListView_SelectionChanged2">
+            <ListView  x:Name="ser" ItemsSource="{Binding seriass}" Grid.Row="2" SelectionChanged="ListView_SelectionChanged2">
                 <ListView.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFE02323" Offset="0"/>

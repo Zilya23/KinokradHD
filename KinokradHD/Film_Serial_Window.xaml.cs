@@ -222,9 +222,11 @@ namespace KinokradHD
 
         private void tb_FeedBack_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            FeedBackWindow feedBackWindow = new FeedBackWindow();
-            feedBackWindow.Show();
- 
+            foreach (var i in result)
+            {
+                FeedBackWindow feedBackWindow = new FeedBackWindow(i.idFilm);
+                feedBackWindow.Show();
+            }
         }
 
         private void tb_FeedBack_MouseEnter(object sender, MouseEventArgs e)
@@ -254,20 +256,27 @@ namespace KinokradHD
 
         private void tb_Actor_MouseLeave(object sender, MouseEventArgs e)
         {
-            tb_Actor.Foreground = new SolidColorBrush(Colors.White);
+           tb_Actor.Foreground = new SolidColorBrush(Colors.White);
+        }
+
+        private void btn_Edit_Click(object sender, RoutedEventArgs e)
+        {
+            //RedaktorWindow redaktorWindow = new RedaktorWindow();
+            //redaktorWindow.Show();
         }
     }
-    public class Film2
-    {
-        public int idFilm { get; set; }
-        public int idOperator { get; set; }
-        public int idDir { get; set; }
-        public int idScreen { get; set; }
-        public int idActot { get; set; }
-    };
+    
+    //public class Film2
+    //{
+    //    public int idFilm { get; set; }
+    //    public int idOperator { get; set; }
+    //    public int idDir { get; set; }
+    //    public int idScreen { get; set; }
+    //    public int idActot { get; set; }
+    //}
 }
 
-    public class Operator2
+public class Operator2
     {
         public string nameOper { get; set; }
         public string surOper { get; set; }

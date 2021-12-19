@@ -58,8 +58,17 @@ namespace KinokradHD
             if (searh.Text != "")
             {
                 fil.SelectedItem = null;
-                fil.SelectedItem = new ObservableCollection<Film>(bd_connection.connection.Film.Where(z => z.Title.Contains(searh.Text)).ToList());
+                ser.ItemsSource = new ObservableCollection<Serias>(bd_connection.connection.Serias.Where(z => z.Title.Contains(searh.Text)).ToList());
+               fil.ItemsSource  = new ObservableCollection<Film>(bd_connection.connection.Film.Where(z => z.Title.Contains(searh.Text)).ToList());
+
             }
+        }
+
+        private void Add_Film_Click(object sender, RoutedEventArgs e)
+        {
+            New_FilmWindow newFil = new New_FilmWindow();
+            newFil.Show();
+            //bd_connection.connection.SaveChanges();
         }
     }
 }

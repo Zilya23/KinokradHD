@@ -70,6 +70,9 @@
     <Compile Include="ActorWindow.xaml.cs">
       <DependentUpon>ActorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Addindow.xaml.cs">
+      <DependentUpon>Addindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Awards.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
@@ -127,6 +130,9 @@
     <Compile Include="GlavnayaWindow.xaml.cs">
       <DependentUpon>GlavnayaWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="New_FilmWindow.xaml.cs">
+      <DependentUpon>New_FilmWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Nomination.cs">
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
@@ -176,6 +182,10 @@
       <DependentUpon>DBconnect.tt</DependentUpon>
     </Compile>
     <Page Include="ActorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Addindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -232,6 +242,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="New_FilmWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="OperatorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

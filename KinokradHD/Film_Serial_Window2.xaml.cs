@@ -214,7 +214,7 @@ namespace KinokradHD
         {
             tb_OperatorS.Foreground = new SolidColorBrush(Colors.Blue);
         }
-
+        
         private void tb_OperatorS_MouseLeave(object sender, MouseEventArgs e)
         {
             tb_OperatorS.Foreground = new SolidColorBrush(Colors.White);

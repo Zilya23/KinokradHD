@@ -13,7 +13,21 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-        
-        
+        <ListView ItemsSource="{Binding feedbacks}">
+            <ListView.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFE02323" Offset="0"/>
+                    <GradientStop Color="#FF461212" Offset="1"/>
+                </LinearGradientBrush>
+            </ListView.Background>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock x:Name="tb_Score" Text="{Binding Score}"/>
+                        <TextBlock x:Name="tb_Feedback" Text="{Binding Feedback1}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>
